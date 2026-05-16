@@ -16,5 +16,9 @@ wheels/
 # Reference implementation -- kept locally, not shipped with the lab repo.
 main.py
 
+# Scaling-lab facilitator-only docs -- kept locally, not shipped with the lab repo.
+scaling-lab/01_prep_runbook.md
+scaling-lab/02_facilitator_guide.md
+
 .DS_Store
 **/.DS_Store
