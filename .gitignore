@@ -20,5 +20,9 @@ main.py
 scaling-lab/01_prep_runbook.md
 scaling-lab/02_facilitator_guide.md
 
+# GRPO-lab training artifacts -- produced on the pod, never committed.
+grpo-reasoning/grpo_saved_lora/
+grpo-reasoning/outputs/
+
 .DS_Store
 **/.DS_Store
