@@ -46,8 +46,11 @@ submissions. `config.hard.toml` is the initial contest profile used in calibrati
 eight model requests, eight Python calls, 16,384 output tokens per request and
 240 seconds per question. Set the final policy before seeing validation results.
 Keep all 60 cases in the denominator, including timeouts and tool/token failures.
-An entire final run has a configured ceiling of four hours per agent; schedule
-it after the interactive session and account for API usage.
+An entire final run can consume four hours of episode time per agent. The CLI
+defaults to four simultaneous episodes (`--concurrency 4`), giving roughly an hour
+plus overhead at the full deadlines; serial execution takes up to four hours plus
+overhead. Rehearse capacity, fix the same concurrency for all teams, schedule final
+evaluation after the interactive session and account for API usage.
 
 Have each pair submit its complete agent code and any allowed support files.
 Record a hash of the whole submission; this harness automatically snapshots and
@@ -90,7 +93,7 @@ Use the **same prepared questions and key for every team**, and preserve the
 returned run's actual directory name if it was numbered. The organizer's
 `worker-key/manifest.json` records the question hash, key hash and mapping back
 to the frozen validation set. Verify the returned `run.json` question hash,
-scheduled IDs, agent snapshot, `provider_configuration`, model and limits before
+scheduled IDs, agent snapshot, `provider_configuration`, model, concurrency and limits before
 accepting a result. Separate model/backend tracks if participants explore different
 providers; a single mixed-model leaderboard does not isolate agent improvements.
 

@@ -7,7 +7,7 @@ from mathlab.cli import main
 from mathlab.config import Limits, load_limits
 from mathlab.files import load_questions, read_json, read_jsonl, sha256
 from mathlab.scoring import parse_answer
-from mathlab.types import LabError
+from mathlab.types import LabError, ProviderError
 from tests.conftest import ROOT, ScriptedModel, jsonl, response
 from tests.test_scoring import fixture_run
 
@@ -152,3 +152,81 @@ def test_reject_duplicate_json_keys(tmp_path):
     path.write_text(json.dumps({"id": "a", "problem": ""}) + "\n")
     with pytest.raises(LabError, match="empty"):
         load_questions(path)
+
+
+@pytest.mark.parametrize(
+    "flags,visible,concurrency",
+    [
+        ([], False, 4),
+        (["--progress", "--concurrency", "2"], True, 2),
+        (["--no-progress", "--concurrency", "1"], False, 1),
+    ],
+)
+def test_cli_parallel_progress_counts_failures_and_selected_questions(
+    tmp_path, monkeypatch, capsys, flags, visible, concurrency
+):
+    class OfflineModel(ScriptedModel):
+        closed = False
+
+        async def close(self):
+            self.closed = True
+
+    model = OfflineModel([ProviderError("fixture failure"), response(value="42")])
+    monkeypatch.setenv("OPENAI_API_KEY", "offline-test-key")
+    monkeypatch.setenv("MODEL", "offline-test-model")
+    monkeypatch.setattr("mathlab.cli.inspect_image", lambda *_: "sha256:test")
+    monkeypatch.setattr("mathlab.cli.create_model", lambda *_: model)
+    questions = jsonl(
+        tmp_path / "questions.jsonl",
+        [{"id": name, "problem": name} for name in ("one", "two", "unused")],
+    )
+    assert (
+        main(
+            [
+                "run",
+                "--out",
+                str(tmp_path / "run"),
+                "--agent",
+                str(ROOT / "agents/direct.py"),
+                "--questions",
+                str(questions),
+                "--config",
+                str(ROOT / "config.toml"),
+                "--id",
+                "one",
+                "--id",
+                "two",
+                *flags,
+            ]
+        )
+        == 0
+    )
+    captured = capsys.readouterr()
+    assert "Finished 2 episodes" in captured.out and "Episodes" not in captured.out
+    if visible:
+        assert "2/2" in captured.err and "100%" in captured.err and "failed=1" in captured.err
+    else:
+        assert captured.err == ""
+    assert read_json(tmp_path / "run/run.json")["concurrency"] == concurrency
+    assert model.closed
+
+
+@pytest.mark.parametrize("value", ["0", "-1", "1.5"])
+def test_cli_rejects_invalid_concurrency_before_accessing_services(value, monkeypatch):
+    monkeypatch.setattr("mathlab.cli.create_model", lambda *_: pytest.fail("API called"))
+    monkeypatch.setattr("mathlab.cli.inspect_image", lambda *_: pytest.fail("Docker called"))
+    with pytest.raises(SystemExit) as error:
+        main(
+            [
+                "run",
+                "--agent",
+                "agent.py",
+                "--questions",
+                "questions.jsonl",
+                "--out",
+                "unused",
+                "--concurrency",
+                value,
+            ]
+        )
+    assert error.value.code == 2

@@ -46,8 +46,10 @@ uv run mathlab run --agent agents/participant.py \
   --id hard-002 --id hard-004 --id hard-005 --out runs/hard-starter
 ```
 
-The full key still scores this subset. Running all twelve can take up to 48 minutes
-per agent at the recommended deadline; use subsets while iterating.
+The full key still scores this subset. All twelve represent up to 48 minutes of
+episode time at the recommended deadline: roughly twelve minutes plus overhead
+at the default `--concurrency 4`, or 48 minutes plus overhead with `--concurrency 1`.
+Use subsets while iterating and rehearse the chosen concurrency on your backend.
 
 ## Problems and progression
 

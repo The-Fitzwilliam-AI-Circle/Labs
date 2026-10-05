@@ -247,3 +247,152 @@ def test_ids_validated_before_creating_another_run(tmp_path, questions):
         asyncio.run(run(**run_args(tmp_path, questions, model, selected_ids=["missing"])))
     assert not model.requests
     assert not (tmp_path / "run-2").exists()
+
+
+def test_parallel_workers_bound_requests_flush_results_and_score_by_id(tmp_path):
+    questions = jsonl(
+        tmp_path / "questions.jsonl", [{"id": str(i), "problem": str(i)} for i in range(4)]
+    )
+    answers = jsonl(
+        tmp_path / "answers.jsonl", [{"id": str(i), "answer": str(i)} for i in range(4)]
+    )
+
+    async def scenario():
+        started = [asyncio.Event() for _ in range(4)]
+        release = [asyncio.Event() for _ in range(4)]
+        progress = []
+        three_done = asyncio.Event()
+
+        class Model:
+            active = peak = 0
+
+            async def request(self, history, instructions, **kwargs):
+                index = int(history[0]["content"])
+                self.active += 1
+                self.peak = max(self.peak, self.active)
+                started[index].set()
+                try:
+                    await release[index].wait()
+                    if index == 1:
+                        raise ProviderError("fixture failure")
+                    return response(value=str(index))
+                finally:
+                    self.active -= 1
+
+        def report(completed, total, failed):
+            progress.append((completed, total, failed))
+            if completed:
+                assert len(read_jsonl(tmp_path / "run/results.jsonl")) == completed
+            if completed == 3:
+                three_done.set()
+
+        model = Model()
+        task = asyncio.create_task(
+            run(
+                **run_args(
+                    tmp_path,
+                    questions,
+                    model,
+                    concurrency=2,
+                    on_progress=report,
+                    limits=Limits(max_model_requests=1),
+                )
+            )
+        )
+        await started[0].wait()
+        await started[1].wait()
+        assert not started[2].is_set()
+        release[1].set()
+        await started[2].wait()
+        release[2].set()
+        await started[3].wait()
+        release[3].set()
+        await three_done.wait()
+        release[0].set()
+        manifest = await task
+        assert manifest["concurrency"] == model.peak == 2
+        assert model.active == 0
+        assert progress == [(0, 4, 0), (1, 4, 1), (2, 4, 1), (3, 4, 1), (4, 4, 1)]
+
+    asyncio.run(asyncio.wait_for(scenario(), timeout=5))
+    rows = read_jsonl(tmp_path / "run/results.jsonl")
+    assert [r["id"] for r in rows] == ["1", "2", "3", "0"]
+    assert all(r["model_requests"] == 1 for r in rows)
+    events = [json.loads(line) for line in (tmp_path / "run/traces.jsonl").read_text().splitlines()]
+    for task_id in ("0", "1", "2", "3"):
+        own = [e for e in events if e["task_id"] == task_id]
+        assert [e["event_order"] for e in own] == list(range(1, len(own) + 1))
+        assert own[-1]["event"] == "episode_end"
+    assert score(tmp_path / "run", answers)["correct"] == 3
+
+
+def test_parallel_cancellation_drains_active_workers_and_leaves_queue_unstarted(tmp_path):
+    questions = jsonl(
+        tmp_path / "questions.jsonl", [{"id": str(i), "problem": str(i)} for i in range(5)]
+    )
+
+    async def scenario():
+        ready = asyncio.Event()
+
+        class Model:
+            active = calls = cleaned = 0
+
+            async def request(self, *args, **kwargs):
+                self.calls += 1
+                self.active += 1
+                if self.active == 2:
+                    ready.set()
+                try:
+                    await asyncio.Event().wait()
+                finally:
+                    await asyncio.sleep(0)
+                    self.active -= 1
+                    self.cleaned += 1
+
+        model = Model()
+        task = asyncio.create_task(run(**run_args(tmp_path, questions, model, concurrency=2)))
+        await ready.wait()
+        task.cancel()
+        with pytest.raises(asyncio.CancelledError):
+            await task
+        assert model.active == 0 and model.cleaned == model.calls == 2
+
+    asyncio.run(asyncio.wait_for(scenario(), timeout=5))
+    manifest = read_json(tmp_path / "run/run.json")
+    assert manifest["state"] == "incomplete" and manifest["ended_at"]
+    events = [json.loads(line) for line in (tmp_path / "run/traces.jsonl").read_text().splitlines()]
+    assert sum(e["event"] == "episode_interrupted" for e in events) == 2
+    assert (tmp_path / "run/results.jsonl").read_text() == ""
+
+
+def test_queued_questions_get_a_fresh_deadline_when_started(tmp_path):
+    questions = jsonl(
+        tmp_path / "questions.jsonl", [{"id": str(i), "problem": str(i)} for i in range(6)]
+    )
+
+    class Model:
+        async def request(self, *args, **kwargs):
+            await asyncio.sleep(0.04)
+            return response()
+
+    asyncio.run(
+        run(
+            **run_args(
+                tmp_path,
+                questions,
+                Model(),
+                concurrency=1,
+                limits=Limits(episode_timeout_seconds=0.15),
+            )
+        )
+    )
+    assert all(r["status"] == "completed" for r in read_jsonl(tmp_path / "run/results.jsonl"))
+
+
+@pytest.mark.parametrize("concurrency", [0, -1, True, 1.5])
+def test_invalid_concurrency_does_not_create_run(tmp_path, questions, concurrency):
+    with pytest.raises(LabError, match="positive integer"):
+        asyncio.run(
+            run(**run_args(tmp_path, questions, ScriptedModel([]), concurrency=concurrency))
+        )
+    assert not (tmp_path / "run").exists()

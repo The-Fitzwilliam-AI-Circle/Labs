@@ -54,6 +54,7 @@ def summarize(label, directories, *, data_directory=None, expected_ids=None):
                     for key in ("model", "agent_sha256", "limits", "docker_image_id")
                 },
                 "provider_configuration": manifest.get("provider_configuration"),
+                "concurrency": manifest.get("concurrency", 1),
             }
         )
         token_limited = set()

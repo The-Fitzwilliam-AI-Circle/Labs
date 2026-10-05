@@ -5,6 +5,23 @@ questions** and **60 organizer-held final-validation questions**. The older
 forty-question ladder remains a warm-up; twelve FrontierMath questions remain
 optional capstones. Their IDs and keys have not changed.
 
+## Parallel benchmarks and progress
+
+- CLI runs default to four active episodes, adjustable with `--concurrency`.
+  Per-question budgets and deadlines remain independent; queued questions do not
+  consume their deadlines while waiting. Concurrency is saved with each run.
+- tqdm reports completed episodes, elapsed time, estimated remaining time and
+  execution failures. It is automatic in terminals, with `--progress` and
+  `--no-progress` overrides. Mathematical correctness is still determined by scoring.
+- `uv run pytest -q`: **215 passed**, five Docker integration tests deselected.
+- `uv run pytest -m integration -q`: **5 passed**, including parallel episodes
+  with separate real Python containers, correct observation routing and cleanup.
+- Tests check overlapping requests, the worker limit, completion-order result
+  persistence and scoring, independent budgets/deadlines, cancellation cleanup,
+  progress totals for selected questions, and invalid concurrency inputs.
+- Ruff lint, formatting and Git whitespace checks pass. These checks use scripted
+  model responses; provider throughput and rate limits still need event rehearsal.
+
 ## Provider support and event setup
 
 - `uv run pytest -q`: **202 passed**, four Docker integration tests deselected.

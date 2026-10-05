@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
+from tqdm import tqdm
 
 from mathlab.config import load_limits, provider_configuration
 from mathlab.model import ChatCompletionsModel, ResponsesModel
@@ -18,6 +19,16 @@ from mathlab.runner import run
 from mathlab.runtime import AgentContext, TraceWriter
 from mathlab.scoring import parse_answer, score
 from mathlab.types import LabError
+
+
+def positive_integer(value: str) -> int:
+    try:
+        parsed = int(value)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be a positive integer") from exc
+    if parsed < 1:
+        raise argparse.ArgumentTypeError("must be a positive integer")
+    return parsed
 
 
 def parser() -> argparse.ArgumentParser:
@@ -45,6 +56,21 @@ def parser() -> argparse.ArgumentParser:
     execute.add_argument(
         "--id", dest="ids", action="append", help="Select a task ID; repeat as needed"
     )
+    execute.add_argument(
+        "--concurrency",
+        type=positive_integer,
+        default=4,
+        help="Maximum simultaneous questions (default: 4; use 1 for serial execution)",
+    )
+    progress = execute.add_mutually_exclusive_group()
+    progress.add_argument(
+        "--progress",
+        dest="progress",
+        action="store_true",
+        help="Show progress even when stderr is redirected",
+    )
+    progress.add_argument("--no-progress", dest="progress", action="store_false")
+    execute.set_defaults(progress=None)
     grade = commands.add_parser("score", help="Score a completed run locally (no API or Docker)")
     grade.add_argument("--run", type=Path, required=True)
     grade.add_argument("--answers", type=Path, required=True)
@@ -131,20 +157,37 @@ async def live_check(limits, settings, *, image_id=None, check_tools=False):
 async def execute_run(args, limits, settings, image_id):
     model = create_model(settings)
     try:
-        return await run(
-            agent_path=args.agent,
-            questions_path=args.questions,
-            out=args.out,
-            limits=limits,
-            model=model,
-            python=DockerPython(image_id),
-            model_id=settings.model,
-            provider_metadata=settings.public_metadata(),
-            image_id=image_id,
-            selected_ids=args.ids,
-            secrets=configured_secrets(),
-            on_start=lambda directory: print(f"Run directory: {directory}", flush=True),
-        )
+        with tqdm(
+            total=0,
+            desc="Episodes",
+            unit="episode",
+            dynamic_ncols=True,
+            disable=None if args.progress is None else not args.progress,
+        ) as progress:
+
+            def report(completed, total, failed):
+                progress.total = total
+                progress.set_postfix(failed=failed, refresh=False)
+                progress.update(completed - progress.n)
+                if completed == 0:
+                    progress.refresh()
+
+            return await run(
+                agent_path=args.agent,
+                questions_path=args.questions,
+                out=args.out,
+                limits=limits,
+                model=model,
+                python=DockerPython(image_id),
+                model_id=settings.model,
+                provider_metadata=settings.public_metadata(),
+                image_id=image_id,
+                selected_ids=args.ids,
+                secrets=configured_secrets(),
+                on_start=lambda directory: print(f"Run directory: {directory}", flush=True),
+                concurrency=args.concurrency,
+                on_progress=report,
+            )
     finally:
         await model.close()
 

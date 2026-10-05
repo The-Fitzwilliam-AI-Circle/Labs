@@ -13,7 +13,8 @@ four pairs plus an organizer and helper is another practical arrangement.
 
 Use a common hosted API for the main competition so participants do not need a GPU
 or model weights on their laptops. If using self-hosted inference, provide one
-rehearsed shared server and test it with five simultaneous agent runs. Participants
+rehearsed shared server and test it with five simultaneous agent runs at the chosen
+`--concurrency` (default four per run, or up to 20 active episodes). Participants
 still need local Docker for Python execution. Keep experiments with models running
 on individual laptops in the exploration track.
 
@@ -116,9 +117,11 @@ loop. If there are only 90 minutes, shorten experimentation; keep setup prefligh
 and the submission freeze.
 
 The full final evaluation is **after the interactive session**. Sixty episodes at
-the current four-minute deadline allow up to four hours per team with this
-sequential runner. Actual runtime may be shorter; measure it during the development
-rehearsal. Do not promise a full 60-question leaderboard in the last ten minutes.
+the current four-minute deadline represent up to four hours of episode time per
+team. With `--concurrency 4`, allow roughly an hour plus setup and cleanup in the
+worst case; with `--concurrency 1`, allow four hours plus overhead. Throughput depends
+on server capacity and rate limits; measure it during the development rehearsal.
+Do not promise a full 60-question leaderboard in the last ten minutes.
 Use practice results for the live discussion and publish final results afterward.
 Five team submissions require **300 final episodes**, plus any organizer baseline
 runs. Include these in the inference allowance and evaluation schedule.
@@ -138,7 +141,9 @@ agent budget failures counted. A verified infrastructure outage may justify a
 documented rerun under the same rule for every affected team; keep the original
 run rather than selecting whichever result scores better. A shared server must
 have consistent capacity during scoring. Evaluate sequentially or with a fixed,
-load-tested worker count to avoid queue pressure deciding the ranking.
+load-tested worker count to avoid queue pressure deciding the ranking. Pin both
+the number of simultaneous team runs and each run's `--concurrency`; record the
+latter from `run.json`. Lower concurrency if the shared provider cannot sustain it.
 
 Report correct/60 plus invalid answers, failure categories, tokens and time. Cost
 or latency awards should be separate and only compare measurements made under

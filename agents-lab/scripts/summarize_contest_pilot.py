@@ -25,7 +25,7 @@ def main():
         summarize(label, [directory], data_directory=DATA, expected_ids=pilot["ids"])
         for label, directory in (("direct", args.direct), ("tool", args.tool))
     ]
-    for key in ("model", "limits", "docker_image_id", "provider_configuration"):
+    for key in ("model", "limits", "docker_image_id", "provider_configuration", "concurrency"):
         if profiles[0][key] != profiles[1][key]:
             raise ValueError(f"Baseline mismatch: {key}")
     fixture = json.loads((ROOT / "data/sources/contest-dev.json").read_text())

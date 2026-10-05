@@ -4,7 +4,12 @@ import subprocess
 
 import pytest
 
+from mathlab.config import Limits
+from mathlab.files import read_jsonl
 from mathlab.python_tool import DockerPython, inspect_image
+from mathlab.runner import run
+from mathlab.scoring import score
+from tests.conftest import ROOT, jsonl, response
 
 
 def containers():
@@ -140,4 +145,54 @@ def test_cancellation_removes_container(tool):
             await task
 
     asyncio.run(scenario())
+    assert containers() == before
+
+
+@pytest.mark.integration
+def test_parallel_episodes_keep_docker_observations_separate(tool, tmp_path):
+    before = containers()
+    questions = jsonl(
+        tmp_path / "questions.jsonl", [{"id": str(i), "problem": str(i)} for i in range(3)]
+    )
+    answers = jsonl(
+        tmp_path / "answers.jsonl", [{"id": str(i), "answer": str(i)} for i in range(3)]
+    )
+
+    async def scenario():
+        ready = asyncio.Event()
+
+        class Model:
+            calls = 0
+
+            async def request(self, history, instructions, **kwargs):
+                value = history[0]["content"]
+                if len(history) == 1:
+                    self.calls += 1
+                    if self.calls == 2:
+                        ready.set()
+                    await ready.wait()
+                    return response("python", f"print({value})", f"python-{value}")
+                assert history[-1]["call_id"] == f"python-{value}"
+                observation = json.loads(history[-1]["output"])
+                assert observation["stdout"].strip() == value
+                assert observation["exit_code"] == 0
+                return response(value=value)
+
+        await run(
+            agent_path=ROOT / "agents/tool.py",
+            questions_path=questions,
+            out=tmp_path / "run",
+            limits=Limits(),
+            model=Model(),
+            python=tool,
+            model_id="offline-fixture",
+            concurrency=2,
+        )
+
+    asyncio.run(asyncio.wait_for(scenario(), timeout=20))
+    assert score(tmp_path / "run", answers)["correct"] == 3
+    assert all(
+        row["model_requests"] == 2 and row["python_calls"] == 1
+        for row in read_jsonl(tmp_path / "run/results.jsonl")
+    )
     assert containers() == before

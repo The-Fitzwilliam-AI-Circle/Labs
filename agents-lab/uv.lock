@@ -139,6 +139,7 @@ source = { editable = "." }
 dependencies = [
     { name = "openai" },
     { name = "python-dotenv" },
+    { name = "tqdm" },
 ]
 
 [package.dev-dependencies]
@@ -151,6 +152,7 @@ dev = [
 requires-dist = [
     { name = "openai", specifier = ">=2,<3" },
     { name = "python-dotenv", specifier = ">=1,<2" },
+    { name = "tqdm", specifier = ">=4.67,<5" },
 ]
 
 [package.metadata.requires-dev]

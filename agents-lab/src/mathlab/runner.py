@@ -1,4 +1,4 @@
-"""Sequential episodes. Generation receives questions; only scoring reads answers."""
+"""Bounded concurrent episodes; generation never reads answer keys."""
 
 import asyncio
 import hashlib
@@ -94,7 +94,11 @@ async def run(
     lock_path: Path | None = None,
     secrets: tuple[str, ...] = (),
     on_start: Callable[[Path], None] | None = None,
+    concurrency: int = 1,
+    on_progress: Callable[[int, int, int], None] | None = None,
 ) -> dict:
+    if type(concurrency) is not int or concurrency < 1:
+        raise LabError("concurrency must be a positive integer")
     tasks = load_questions(questions_path)
     if selected_ids is not None:
         if not selected_ids or len(set(selected_ids)) != len(selected_ids):
@@ -118,6 +122,7 @@ async def run(
         "model": model_id,
         "provider_configuration": provider_metadata,
         "limits": asdict(limits),
+        "concurrency": concurrency,
         "scheduled_task_ids": [task.id for task in tasks],
         "questions_path": str(questions_path.resolve()),
         "questions_sha256": sha256(questions_path),
@@ -135,10 +140,14 @@ async def run(
     ):
         trace = TraceWriter(traces_file, secrets + (os.getenv("OPENAI_API_KEY", ""),))
         write_json(out / "run.json", trace.redact(manifest))
-        try:
-            if on_start is not None:
-                on_start(out)
-            for task in tasks:
+        pending = iter(tasks)
+        completed = failed = 0
+
+        async def worker():
+            nonlocal completed, failed
+            # Taking an item and writing each JSONL row have no await points.
+            # All workers share one event loop, so records cannot overlap.
+            for task in pending:
                 ctx = AgentContext(task.id, limits, model, python, trace)
                 ctx.record("episode_start", problem=task.problem)
                 answer, status, error = None, "completed", None
@@ -174,8 +183,27 @@ async def run(
                 row = trace.redact(asdict(result))
                 write_jsonl_row(results_file, row)
                 ctx.record("episode_end", result=row)
+                completed += 1
+                failed += status != "completed"
+                if on_progress is not None:
+                    on_progress(completed, len(tasks), failed)
+
+        workers = []
+        try:
+            if on_start is not None:
+                on_start(out)
+            if on_progress is not None:
+                on_progress(0, len(tasks), 0)
+            workers = [asyncio.create_task(worker()) for _ in range(min(concurrency, len(tasks)))]
+            await asyncio.gather(*workers)
             manifest["state"] = "completed"
         finally:
+            # Drain cancellations (including Docker cleanup) before closing files
+            # or the model client. An interrupted run remains unscoreable.
+            for worker_task in workers:
+                if not worker_task.done():
+                    worker_task.cancel()
+            await asyncio.gather(*workers, return_exceptions=True)
             manifest["ended_at"] = utc_now()
             write_json(out / "run.json", trace.redact(manifest))
     return manifest
