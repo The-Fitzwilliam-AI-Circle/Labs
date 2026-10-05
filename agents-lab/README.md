@@ -38,6 +38,33 @@ Repeating a run command automatically creates a new directory. For example,
 preserved. The CLI prints the actual directory when the run starts and a score
 command for that specific run when it finishes.
 
+Runs process **four questions concurrently** by default. Set `--concurrency N`
+to change the number of active episodes, or `--concurrency 1` for serial execution:
+
+```bash
+uv run mathlab run --agent agents/tool.py --config config.hard.toml \
+  --questions data/contest/questions.jsonl --out runs/contest-tool --concurrency 4
+```
+
+A tqdm progress bar shows completed/total episodes, elapsed time, estimated time
+remaining and execution failures. Incorrect maths answers are identified later by
+`score`, so the failure count is not an accuracy score. Progress appears on stderr
+in a terminal; use `--progress` to show it in redirected logs or `--no-progress`
+to hide it. Failed episodes also advance the bar.
+
+Each episode keeps its own request/tool budget and starts its deadline when a worker
+picks it up. Results are flushed as episodes finish, so row order may differ from
+question order; scoring matches task IDs. Trace events from different questions can
+interleave: filter by `task_id` and follow its `event_order`. Ctrl-C cancels active
+work and cleans up before leaving the run incomplete.
+
+Use the same concurrency for comparisons; it is recorded in `run.json`. Higher
+concurrency increases simultaneous API requests and Docker containers, so reduce it
+if the provider rate-limits requests or the laptop/server is overloaded. Five pairs
+using the default can have up to 20 episodes active across the room. Keep mutable
+episode state inside `solve`, rather than in shared module globals. Agent code must
+yield through async calls; CPU-heavy host code blocks the shared event loop.
+
 Choose `PROVIDER=openai`, `openrouter`, or `local`. Existing configurations default
 to OpenAI. The [provider guide](docs/PROVIDERS.md) has copyable settings for hosted
 APIs and OpenAI-compatible local servers. No agent changes are needed when switching.
@@ -120,7 +147,7 @@ errors separately from token truncations, tool-budget exhaustion and timeouts.
 
 | File | What to inspect |
 | --- | --- |
-| `run.json` | Model, resolved limits, scheduled IDs, hashes, source state, image ID, completion |
+| `run.json` | Model, resolved limits, concurrency, scheduled IDs, hashes, source state, image ID, completion |
 | `agent.py` | Snapshot of the evaluated agent, including its editable prompt |
 | `results.jsonl` | One terminal result per task, answer, status, usage, duration, bounded error |
 | `traces.jsonl` | Ordered requests, returned provider items, Python code, observations, and usage |

@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "A small, inspectable maths-agent lab for the Fitzwilliam AI Circle"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-dependencies = ["openai>=2,<3", "python-dotenv>=1,<2"]
+dependencies = ["openai>=2,<3", "python-dotenv>=1,<2", "tqdm>=4.67,<5"]
 
 [project.scripts]
 mathlab = "mathlab.cli:main"
@@ -35,5 +35,5 @@ select = ["E", "F", "I", "B", "UP", "ASYNC"]
 # These boundaries receive the context's remaining deadline and enforce it internally.
 "src/mathlab/model.py" = ["ASYNC109"]
 "src/mathlab/python_tool.py" = ["ASYNC109"]
-# Small local records are written synchronously by the sequential v0.1 runner.
+# Small local records are written synchronously on the runner's event loop.
 "src/mathlab/runner.py" = ["ASYNC240"]
