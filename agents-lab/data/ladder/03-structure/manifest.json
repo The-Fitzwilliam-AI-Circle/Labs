@@ -1,0 +1,199 @@
+{
+  "dataset": "Original Mathlab difficulty ladder",
+  "source_url": null,
+  "source_revision": "ladder-v1",
+  "generator": "scripts/ladder.py",
+  "generator_sha256": "151460c4f3135a1dd9656a5a4fbef4f2ce0350c57ab9cb91c8945b5ac9bcc846",
+  "selection_notes": "Original deterministic instances with exact reference solvers. Ten recurring families with progressively stronger computational or modelling demands. Difficulty is a design target; new questions have not been calibrated on a live model. Public development data, not held-out evaluation. Verification: tests/test_ladder.py.",
+  "tier": "03-structure",
+  "selected_questions": [
+    {
+      "tier": "03-structure",
+      "family": "recurrence",
+      "parameters": {
+        "n": 1000000000039,
+        "modulus": 1000000007,
+        "prefix": false
+      },
+      "technique": "Exact recurrence; fast exponentiation; augment the state for a prefix sum.",
+      "id": "dev-021"
+    },
+    {
+      "tier": "03-structure",
+      "family": "digits",
+      "parameters": {
+        "length": 16,
+        "modulus": 23,
+        "digit_sum": 61,
+        "adjacent": true,
+        "forbid13": false
+      },
+      "technique": "Track the remainder, digit sum and relevant suffix; prune impossible sums.",
+      "id": "dev-022"
+    },
+    {
+      "tier": "03-structure",
+      "family": "paths",
+      "parameters": {
+        "width": 24,
+        "height": 20,
+        "blocked": [
+          [
+            4,
+            3
+          ],
+          [
+            9,
+            7
+          ],
+          [
+            13,
+            10
+          ]
+        ],
+        "turns": 17,
+        "ceiling": null
+      },
+      "technique": "Count paths with position, previous direction and turns in the state.",
+      "id": "dev-023"
+    },
+    {
+      "tier": "03-structure",
+      "family": "urn",
+      "parameters": {
+        "capacities": [
+          18,
+          21,
+          24
+        ],
+        "draws": 22,
+        "modulus": 5,
+        "residue": 0,
+        "gaps": [
+          2,
+          2
+        ]
+      },
+      "technique": "Hypergeometric weights; normalize over the conditioning event, not all draws.",
+      "id": "dev-024"
+    },
+    {
+      "tier": "03-structure",
+      "family": "permutations",
+      "parameters": {
+        "n": 15,
+        "offsets": [
+          0,
+          1,
+          4
+        ]
+      },
+      "technique": "A permanent: subset assignment DP or Ryser inclusion-exclusion.",
+      "id": "dev-025"
+    },
+    {
+      "tier": "03-structure",
+      "family": "coins",
+      "parameters": {
+        "values": [
+          2,
+          5,
+          9,
+          14,
+          23,
+          31
+        ],
+        "caps": [
+          18,
+          15,
+          12,
+          10,
+          8,
+          6
+        ],
+        "target": 360,
+        "number": 26,
+        "odd": null
+      },
+      "technique": "Bounded generating functions or meet in the middle with all constraints.",
+      "id": "dev-026"
+    },
+    {
+      "tier": "03-structure",
+      "family": "tilings",
+      "parameters": {
+        "height": 4,
+        "width": 24,
+        "holes": [
+          [
+            2,
+            5
+          ],
+          [
+            2,
+            10
+          ],
+          [
+            2,
+            15
+          ],
+          [
+            2,
+            20
+          ]
+        ],
+        "horizontal": null
+      },
+      "technique": "A frontier/profile DP; track horizontal dominoes when required.",
+      "id": "dev-027"
+    },
+    {
+      "tier": "03-structure",
+      "family": "necklaces",
+      "parameters": {
+        "length": 60,
+        "ones": 20,
+        "double_gaps": null
+      },
+      "technique": "Burnside's lemma; count periodic fixed points, including cyclic pattern constraints.",
+      "id": "dev-028"
+    },
+    {
+      "tier": "03-structure",
+      "family": "trees",
+      "parameters": {
+        "n": 12,
+        "distances": [
+          1,
+          2,
+          5
+        ],
+        "weighted": false
+      },
+      "technique": "Matrix-tree theorem with an exact integer determinant; parallel-edge multiplicities.",
+      "id": "dev-029"
+    },
+    {
+      "tier": "03-structure",
+      "family": "waiting",
+      "parameters": {
+        "patterns": [
+          "012010",
+          "201202"
+        ],
+        "probabilities": [
+          "1/3",
+          "1/3",
+          "1/3"
+        ],
+        "conditional": false
+      },
+      "technique": "Prefix automaton and exact absorbing-chain equations; condition on the winner.",
+      "id": "dev-030"
+    }
+  ],
+  "sha256": {
+    "questions.jsonl": "e7b60e695a69799a43e023f3b388b2c00ab709c2a54e491cac15dedf701af8ff",
+    "answers.jsonl": "e2c706d1750f864637613ca98382d3d8c35581818698bf748c958fdd5be07f27"
+  }
+}

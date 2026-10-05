@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-05T15:10:34.196171+00:00",
+  "questions_sha256": "405392b2a5f862bd82272b0bbc88e98967a2137edc201a89ce707d9edafcd0e7",
+  "answers_sha256": "0d65f8d993b234576d3d622658243f3c4b0d029ce2e1d647c4e9df6ccf4eb2ae",
+  "method": "Twelve candidates frozen before the first live pilot; all retained. One attempt per question per budget profile. The generous profile used two disjoint batches covering all twelve questions. Public samples and related variants are not an independent held-out benchmark. No API calls were retried by this summarizer; raw run directories remain the source of evidence.",
+  "profiles": [
+    {
+      "label": "original",
+      "model": "gpt-5-nano-2025-08-07",
+      "agent_sha256": "1d19c8f9be01732818d7cdf06acf89bebfe4dfa0f18e405ac3e256a1898bb905",
+      "limits": {
+        "max_model_requests": 6,
+        "max_output_tokens_per_request": 8192,
+        "max_python_calls": 4,
+        "episode_timeout_seconds": 90,
+        "python_timeout_seconds": 5,
+        "python_output_limit_bytes": 8192,
+        "python_image": "mathlab-python:v0"
+      },
+      "docker_image_id": "sha256:d9d7cf6ad46d32989eb61359ee1393f074ef332d5542039fe6fda84f68389489",
+      "runs": [
+        {
+          "directory": "runs/hard-tool-pilot",
+          "started_at": "2026-10-05T14:50:56.343276+00:00",
+          "ended_at": "2026-10-05T15:00:47.496396+00:00",
+          "results_sha256": "6373b48f6d7bbd0ee49a1e495e45d066037dd4bfc75aca5e7022a854e4dac254",
+          "scores_sha256": "208a728f0df6d3b27512856969cf40ab66b1af445dd941fe429f3cff12667c60",
+          "scheduled_task_ids": [
+            "hard-001",
+            "hard-002",
+            "hard-003",
+            "hard-004",
+            "hard-005",
+            "hard-006",
+            "hard-007",
+            "hard-008",
+            "hard-009",
+            "hard-010",
+            "hard-011",
+            "hard-012"
+          ],
+          "provider_reasoning_configurations": [
+            {
+              "effort": "medium",
+              "context": "current_turn",
+              "mode": "standard"
+            }
+          ]
+        }
+      ],
+      "correct": 0,
+      "total": 12,
+      "categories": {
+        "python_budget": 2,
+        "token_limit": 6,
+        "wrong_answer": 4
+      },
+      "input_tokens": 103185,
+      "output_tokens": 92981,
+      "unknown_usage_requests": 0,
+      "outcomes": [
+        {
+          "id": "hard-001",
+          "correct": false,
+          "category": "python_budget",
+          "status": "budget_exceeded",
+          "answer": null,
+          "elapsed_seconds": 77.85623,
+          "model_requests": 5,
+          "python_calls": 4
+        },
+        {
+          "id": "hard-002",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 47.643539,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "hard-003",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 53.583038,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "hard-004",
+          "correct": false,
+          "category": "python_budget",
+          "status": "budget_exceeded",
+          "answer": null,
+          "elapsed_seconds": 48.542036,
+          "model_requests": 5,
+          "python_calls": 4
+        },
+        {
+          "id": "hard-005",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 49.127425,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "hard-006",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "333",
+          "elapsed_seconds": 53.926617,
+          "model_requests": 3,
+          "python_calls": 2
+        },
+        {
+          "id": "hard-007",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "2",
+          "elapsed_seconds": 19.470597,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "hard-008",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 46.446325,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "hard-009",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 50.475983,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "hard-010",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "249999999999750000000000",
+          "elapsed_seconds": 38.556876,
+          "model_requests": 3,
+          "python_calls": 2
+        },
+        {
+          "id": "hard-011",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "4113897303606771042156868599311296618503721407666",
+          "elapsed_seconds": 51.048203,
+          "model_requests": 3,
+          "python_calls": 2
+        },
+        {
+          "id": "hard-012",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 54.460261,
+          "model_requests": 1,
+          "python_calls": 0
+        }
+      ]
+    },
+    {
+      "label": "generous",
+      "model": "gpt-5-nano-2025-08-07",
+      "agent_sha256": "1d19c8f9be01732818d7cdf06acf89bebfe4dfa0f18e405ac3e256a1898bb905",
+      "limits": {
+        "max_model_requests": 8,
+        "max_output_tokens_per_request": 16384,
+        "max_python_calls": 8,
+        "episode_timeout_seconds": 240,
+        "python_timeout_seconds": 5,
+        "python_output_limit_bytes": 8192,
+        "python_image": "mathlab-python:v0"
+      },
+      "docker_image_id": "sha256:d9d7cf6ad46d32989eb61359ee1393f074ef332d5542039fe6fda84f68389489",
+      "runs": [
+        {
+          "directory": "runs/hard-tool-generous",
+          "started_at": "2026-10-05T14:55:38.682116+00:00",
+          "ended_at": "2026-10-05T15:02:30.979353+00:00",
+          "results_sha256": "15985fb14d0e95bdc9b9a0081abdcac75d67a6a8742afb7041a99ee3d86f0389",
+          "scores_sha256": "bd68c1bd7011dec25588e91c848abc369c4b063828a15e57b51c38e04981b5c3",
+          "scheduled_task_ids": [
+            "hard-001",
+            "hard-002",
+            "hard-003",
+            "hard-007",
+            "hard-008",
+            "hard-009"
+          ],
+          "provider_reasoning_configurations": [
+            {
+              "effort": "medium",
+              "context": "current_turn",
+              "mode": "standard"
+            }
+          ]
+        },
+        {
+          "directory": "runs/hard-tool-generous-b",
+          "started_at": "2026-10-05T15:01:43.183013+00:00",
+          "ended_at": "2026-10-05T15:09:36.454209+00:00",
+          "results_sha256": "a7f95ce5d43a9d5d35943824c87b12dbaed595cdf485057dcd93466fb95e1931",
+          "scores_sha256": "c5370c30c17c9b3dd092cba96473e14c10ad2ddd74184b9c2febeb80a3deeefc",
+          "scheduled_task_ids": [
+            "hard-004",
+            "hard-005",
+            "hard-006",
+            "hard-010",
+            "hard-011",
+            "hard-012"
+          ],
+          "provider_reasoning_configurations": [
+            {
+              "effort": "medium",
+              "context": "current_turn",
+              "mode": "standard"
+            }
+          ]
+        }
+      ],
+      "correct": 2,
+      "total": 12,
+      "categories": {
+        "correct": 2,
+        "request_budget": 1,
+        "token_limit": 1,
+        "wrong_answer": 8
+      },
+      "input_tokens": 335335,
+      "output_tokens": 127391,
+      "unknown_usage_requests": 0,
+      "outcomes": [
+        {
+          "id": "hard-001",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "1978419655660313589123618",
+          "elapsed_seconds": 56.965111,
+          "model_requests": 3,
+          "python_calls": 2
+        },
+        {
+          "id": "hard-002",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "625243878951",
+          "elapsed_seconds": 64.985132,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "hard-003",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "3814697265626",
+          "elapsed_seconds": 101.941812,
+          "model_requests": 6,
+          "python_calls": 5
+        },
+        {
+          "id": "hard-004",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "499999999999",
+          "elapsed_seconds": 32.628361,
+          "model_requests": 3,
+          "python_calls": 2
+        },
+        {
+          "id": "hard-005",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "6282172178",
+          "elapsed_seconds": 75.433974,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "hard-006",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "500",
+          "elapsed_seconds": 22.075505,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "hard-007",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "1",
+          "elapsed_seconds": 20.050812,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "hard-008",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "2",
+          "elapsed_seconds": 92.649552,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "hard-009",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "931322574615478515626",
+          "elapsed_seconds": 75.697424,
+          "model_requests": 5,
+          "python_calls": 4
+        },
+        {
+          "id": "hard-010",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "249999999973541763219141",
+          "elapsed_seconds": 107.420739,
+          "model_requests": 8,
+          "python_calls": 7
+        },
+        {
+          "id": "hard-011",
+          "correct": false,
+          "category": "request_budget",
+          "status": "budget_exceeded",
+          "answer": null,
+          "elapsed_seconds": 129.029827,
+          "model_requests": 8,
+          "python_calls": 8
+        },
+        {
+          "id": "hard-012",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 106.71931,
+          "model_requests": 1,
+          "python_calls": 0
+        }
+      ]
+    }
+  ]
+}

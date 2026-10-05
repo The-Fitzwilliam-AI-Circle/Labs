@@ -1,0 +1,1297 @@
+{
+  "dataset": "Mathlab contest mathematics",
+  "version": "contest-v1.1",
+  "split": "development",
+  "count": 100,
+  "license": "CC-BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "credit": "MathArena (ETH Zurich SRI Lab) and the credited competition organizers",
+  "frozen_on": "2026-10-05T15:27:27.469578+00:00",
+  "selection_notes": "Disjoint competition editions for development and final validation. Selected before any lab pilot, without using model outputs or leaderboard item scores. Later source positions preferred over openers. Rungs are an ordering heuristic, not empirically calibrated ratings. Only supported scalar keys and text-complete questions are retained. Keys are normalized MathArena references, not independent re-proofs. Public contest questions may have appeared in model training. Broad methods can recur across editions; no claim of mathematical-family independence.",
+  "sources": [
+    {
+      "dataset": "MathArena/hmmt_feb_2024",
+      "url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2024",
+      "revision": "b3cf7fb48814f76142d0847003a5aac0876f3bf4",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2024/resolve/b3cf7fb48814f76142d0847003a5aac0876f3bf4/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "9ca4e8401d4424d98fa0de98436a68d9ff18f12c355625ed4d0b7455bd326734",
+      "card_sha256": "7f51d3e2b7c88b4fc5472c0ee26bc610a1bea132e1a7194b192973fe4a7d80e4",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    },
+    {
+      "dataset": "MathArena/hmmt_feb_2025",
+      "url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2025",
+      "revision": "6fdc4277120810ff75aa22d2d5489b91f7a262a1",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2025/resolve/6fdc4277120810ff75aa22d2d5489b91f7a262a1/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "ccca64d248b89dc0765e40b893fe4ebeab242226a4336027d95d256886a3d5f2",
+      "card_sha256": "c40c205cdcca35b5188a8809bd9cd200612d4d7f1f23bf88e8806efd083b072a",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    },
+    {
+      "dataset": "MathArena/cmimc_2025",
+      "url": "https://huggingface.co/datasets/MathArena/cmimc_2025",
+      "revision": "8f27517ce4ad1d05e023c0e7eca4344754ba2a04",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/cmimc_2025/resolve/8f27517ce4ad1d05e023c0e7eca4344754ba2a04/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "7f290e5564265e57b0fe91c72bde2f1a06ca147148b7787084c54a0354abfcce",
+      "card_sha256": "5bb6c5ecdf48c0ce3f931602d94ed28457f9be2394b69e9a3d96ebbca29b26dc",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    },
+    {
+      "dataset": "MathArena/smt_2025",
+      "url": "https://huggingface.co/datasets/MathArena/smt_2025",
+      "revision": "d8e99d83f1583842f46d4953cd960eea5d887e45",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/smt_2025/resolve/d8e99d83f1583842f46d4953cd960eea5d887e45/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "0818b4eeadefda3fc1f2866dc04a13840c7b359d3f40e5bbcaa4805828be87b0",
+      "card_sha256": "935beccfa0bd61125d51f18fcdd3115872a687cf758ab3f9f7b7fcfe0f27d59a",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    },
+    {
+      "dataset": "MathArena/brumo_2025",
+      "url": "https://huggingface.co/datasets/MathArena/brumo_2025",
+      "revision": "6de9bc0987f5710c6376ee980e1483dbeb55cfda",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/brumo_2025/resolve/6de9bc0987f5710c6376ee980e1483dbeb55cfda/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "ef510deea34c5b6d165c06d020acede1c1031eb91d90336cb4d615d9e55ba391",
+      "card_sha256": "5b3d7f5c6e9cca4ace46e393b62d88127c5ead8aa6645cb9a5918012a47f8164",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    }
+  ],
+  "source_fixture_sha256": "4bdf374758ac93de78ca41e8a96d7ea6a0101e66d3cfb3b560e1a72defa9729e",
+  "rung_counts": {
+    "01-contest": 36,
+    "02-advanced": 35,
+    "03-stretch": 29
+  },
+  "selected_questions": [
+    {
+      "id": "contest-brumo-2025-06",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 6,
+      "source_problem_sha256": "f8449b0a2be60f55f6e81b9cad21399879c348e77252b7e3d1f02057fa0e354d",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-07",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 7,
+      "source_problem_sha256": "01356db932829c9b510933408d650efd5e7f19324290d82af3e028865f3b38ff",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.23333333333333334,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-08",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 8,
+      "source_problem_sha256": "c5d7f20626d22095d6b0e6dd78601494cd0d274559fa511d11f515b4506fe85f",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.26666666666666666,
+      "changes": [
+        "Corrected f to n in the definition, consistent with the supplied example."
+      ]
+    },
+    {
+      "id": "contest-brumo-2025-09",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 9,
+      "source_problem_sha256": "02ecbaeb96d6d2cd6a724bf753a19455207ba1981332bff96c4a0f04e828cc58",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-10",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 10,
+      "source_problem_sha256": "f8c02cb3d09d4760eae6382dee6ed1e1df42fad5f83df54aca34f69447eeceb1",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3333333333333333,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-12",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 12,
+      "source_problem_sha256": "78fbb6aa59379c2751e5fb19a3a27500bd3f92711b6eb41f04179d10dfc7def6",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-03",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 3,
+      "source_problem_sha256": "24714d3485caa846c829f18811c2e161326830847a643e77c4d09fff06603881",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-04",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 4,
+      "source_problem_sha256": "37c82c257858bbc46302495ea6a0cd525e091b581b19617639192247309af6a7",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-13",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 13,
+      "source_problem_sha256": "0064411bf499f5cd7321d352a13662590908d5af70986b0015f5dbf6027cb2de",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-14",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 14,
+      "source_problem_sha256": "7180ab8b3dc761753fd9d125dae48b75cb23c8df37cfeab32e9bf993b40572a3",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-33",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 33,
+      "source_problem_sha256": "51d80dd40f24ef3f5e915b3c177f7df2845119c9199c0a744f54045412ff882c",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-34",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 34,
+      "source_problem_sha256": "54502ffa72dc011dd131fc22fad5fe992e67af8e15b8b5e80ab1771c4a653969",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-02",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 2,
+      "source_problem_sha256": "21136855d0c9159067957145a4e3de6af9beb23b6df3a5a6d1acc4a42855e5d9",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-03",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 3,
+      "source_problem_sha256": "fa4a0a7a9095f0f58625f754d2770bc6fb0ef43f813f57595b881028335594dc",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-04",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 4,
+      "source_problem_sha256": "f2535193fc55fce9fbb4e6695a1a8b2b08deaee1d9bab1b636147c4f42ec80ab",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-12",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 12,
+      "source_problem_sha256": "f87dd2d5e429b110961ee6a2e337b2372645ddd8203203df9309835a5f9b0fbe",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-13",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 13,
+      "source_problem_sha256": "271e25f3c5355bb6b7f3a28395321ee1d9a6cbc78ca63927a638b3261182fa8c",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-14",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 14,
+      "source_problem_sha256": "570619c2636c86edd19963e5a5159b66e093844ac6613359cf956e3ee494e806",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-23",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 23,
+      "source_problem_sha256": "994eb99eb7f84ff1bbbd182ec7675707f9db24690245d549027a2640e8dcaaa8",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-24",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 24,
+      "source_problem_sha256": "bb212af83a34ed9d1d641fe465462b0e1798d0a856e889b3d1f8c2b292fcaf62",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-02",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 2,
+      "source_problem_sha256": "da5b45fda997dc49709ae8e74f7a97054aeb15be8eb9f8c16d2683f5f37b73cd",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-03",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 3,
+      "source_problem_sha256": "d2c6928d82be85cfb19d408f21f81e854b30c010b2d7dfac98e567883d20ff81",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-04",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 4,
+      "source_problem_sha256": "9e36e772093cd372eeb362163c9c4643aec04ca25457cd01cad47a8603a8b999",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-13",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 13,
+      "source_problem_sha256": "2512a9ba7a4b5924072fda32d58679cb573f9cdebefdd7878ac8469513853b2f",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-14",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 14,
+      "source_problem_sha256": "35e5ed41fd4a356503ab8b398b1388b588f72551bc89d89e81c01f2ce0054d37",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-24",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 24,
+      "source_problem_sha256": "4423f2b6ebfe9bc9f80ab6db1a757aff644459ff3d899f4489009fc8cabe3ecc",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": [
+        "Removed redundant TikZ drawing; all geometric constraints remain in text."
+      ]
+    },
+    {
+      "id": "contest-smt-2025-03",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 3,
+      "source_problem_sha256": "f6897bbe63d0292a333b6f91c5ff73e5857807cdde62a11137c0fe5ff13bc6b8",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-04",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 4,
+      "source_problem_sha256": "bb162e46aeeace9cd3e8679acb7448912c8eb7684b09d76d770a2ca48ea4a5e7",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-13",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 13,
+      "source_problem_sha256": "1e543a29a1449ad73f1ebf699e73e4860b622b836ab066d69b61e2486200a555",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-14",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 14,
+      "source_problem_sha256": "d3ea1b3b269633e950e94092a7b84f77af1a4f02be99a74a6e138f9ee71c1fed",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-23",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 23,
+      "source_problem_sha256": "e47c84e87c6d55f05aaa7cf208b30dff23ae407ffa7bd02512b257d0fcdc0467",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-33",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 33,
+      "source_problem_sha256": "14a499461d32f401d0985d06a55b122dfd7d8b6a68d79108b3f4609ec2df104d",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.23076923076923078,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-34",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 34,
+      "source_problem_sha256": "3936ee7c63e7ea79efb19f6df69c758de3821a5ab3bb3e1c129649360f51f829",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3076923076923077,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-45",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 45,
+      "source_problem_sha256": "38601a39bb228595b0fa1d8f0f652a6017138263f95b34b9ad9310f8734a1547",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-46",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 46,
+      "source_problem_sha256": "521f772708dab3734a3d8a6437ff21f8746ab82f6f6feb57efa6d4f8953a5002",
+      "topics": [
+        "Algebra",
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-47",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 47,
+      "source_problem_sha256": "19ea8e01a8026d2ee0d3be47c1b27527bd0a522f19153e54fbffdb13cd9cb7f6",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-13",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 13,
+      "source_problem_sha256": "e0aef49ba2cbb5d382831466fc09f4a692d1513f1fa233337b3b309f38202233",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.43333333333333335,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-14",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 14,
+      "source_problem_sha256": "49bd2edf1841c26813764128e7f89b9dc59b4e574d26e7830827c6d1c676b945",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.4666666666666667,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-15",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 15,
+      "source_problem_sha256": "5b5b060ad9c2d8cd40c2f575510bdc1197d893bb05eb539161c9a99f7448f9ba",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-16",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 16,
+      "source_problem_sha256": "d1d996e34b093f64a14466883c95907d7b7bdde89289a33d637c824b99961830",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5333333333333333,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-19",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 19,
+      "source_problem_sha256": "1c6920d5f908f475f408529239028a3ad5f4229ede47bbd4121e0096162046ca",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6333333333333333,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-20",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 20,
+      "source_problem_sha256": "72a929ebcb531595c74f09d680ae78c45ea96a842cc554fe4e8e8deac0fc074c",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6666666666666666,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-21",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 21,
+      "source_problem_sha256": "28b20bf184a6f3890ae2cab88c7469947cebf669121ed38200eab8ab483489ea",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-05",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 5,
+      "source_problem_sha256": "e5d3d183e6c345f4260fefdf5fb5836ca29e63ae96b628072b5bd0b057a80f86",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-06",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 6,
+      "source_problem_sha256": "673927f6a93ed3064cf3db0d2f2e718a8094dadf37b817a6a2e95263e1e93553",
+      "topics": [
+        "Algebra",
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-07",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 7,
+      "source_problem_sha256": "b772ba6cbf2358ed81ffea361c0b9b00607c6c0ac25b3ac57417e34f6dd8875d",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": [
+        "Corrected published reference key from 930 to 932; question unchanged. See answer_correction and data/contest/CORRECTIONS.md."
+      ],
+      "answer_correction": {
+        "source_answer": "930",
+        "answer": "932",
+        "reason": "Independent exact enumeration gives 932. The original solution truncates valuations of a_(10m-2) at exponent 6; a_798 has valuation 8, adding two. Valuation frequencies for n=1..810: {0:243,1:324,2:162,3:54,4:18,5:6,6:2,8:1}.",
+        "source_solution_url": "https://cmimc.com/archive/cmimc2025/algnt_sol.pdf",
+        "verification": "tests/test_contest.py; exact big-integer recurrence and independent modular divisibility counts. No model outputs used."
+      }
+    },
+    {
+      "id": "contest-cmimc-2025-15",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 15,
+      "source_problem_sha256": "99ebf29c59d4951237c99c207d71bfaa4dff1d146c92bffc465c93ed4a257985",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-16",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 16,
+      "source_problem_sha256": "ae4c471ff66a84861120c56c6f79a1ab52f7d092a65ff24f578277eca63e2f89",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-26",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 26,
+      "source_problem_sha256": "ffd042288102220d90a3482eaeeaa5d419882799f93321b402089d3f632a4419",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-35",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 35,
+      "source_problem_sha256": "18d23b00cfe7cdf2ffdd2ade672900cdcd89de2285d26370b5c211e039b4ee02",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-37",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 37,
+      "source_problem_sha256": "70f0bfcfeabfec97386380b05b176a3f5eadc0d7551c6dc7d9482485bbf55a8c",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-06",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 6,
+      "source_problem_sha256": "0619b1eb32f8c0971c569bf68d03810fbacf04a4a58aaac08b8e764f82195e7d",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-07",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 7,
+      "source_problem_sha256": "49bb924f2b48c1290e59f8cb67187df59f837fbce41920ea330536d0d608607d",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-15",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 15,
+      "source_problem_sha256": "cf64f1a50a71c15a4fbe7595e31b31f87de05538a0afb9718ec3e7cc0df9cdcb",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-16",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 16,
+      "source_problem_sha256": "c079864b81a27622d8468ed4d5248cab8a802d9c7700b761dd44122526aa1753",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-17",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 17,
+      "source_problem_sha256": "b669b3961a0e9109f1ec49ba2e9aeff8a82f53b5b0b327324108d0f0ea8187a1",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-26",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 26,
+      "source_problem_sha256": "0afa8921f53aea0df2c82ab38a3b0412a88f9cbb1210bc3d9b125706692d7936",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-05",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 5,
+      "source_problem_sha256": "f280922d560c6905b16cd34266c3393d6bfbc4308a103816ba367d6251475d3d",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-06",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 6,
+      "source_problem_sha256": "6c5c46572457a70ed1f6d9ad0ce032e0582462a5fc774cf7f4d622576ab20e40",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-15",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 15,
+      "source_problem_sha256": "e103f900aaa1d05ff2d7aa86d29e62fc24a18bddfbf6556997579dbbb90f574f",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-16",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 16,
+      "source_problem_sha256": "94b3e48ab24acfe4d765b39263ccb7936967215cb896ff33e031126a57ef0f44",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-27",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 27,
+      "source_problem_sha256": "06c279c744c8872282089b03cf0a041686a6efe37ac3a83e68a403b967de8e04",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-05",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 5,
+      "source_problem_sha256": "71d9b070c986510ea68ce0aaa7a3349b766651f69014a944e917f58d506469e1",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-15",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 15,
+      "source_problem_sha256": "097dc2731cd635ea980a4285bb9cb0c5e17af221c578f2e0cab2602db5ae0d9b",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-16",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 16,
+      "source_problem_sha256": "85f5de4ca45f5cbba2505905f7268d1b25bb5fe89cf09210974b134729a37bda",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-17",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 17,
+      "source_problem_sha256": "f3e33107b7c06bf626e2149544eeebbd9ec5e18c749e129ed2ee5fa447db6d98",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-25",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 25,
+      "source_problem_sha256": "df847377210b2c18ea0e551ff1c1a35eb97ccb025ba2fe39f75a66bf574253a3",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-36",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 36,
+      "source_problem_sha256": "6f11ab58abd00ca7d2eab2b00a1f631a175c1eedfcaef0cc5ccf27071809a5b4",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.46153846153846156,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-38",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 38,
+      "source_problem_sha256": "ff013f67580c014170616de0c11b29d22aaddab60c764b33d7c85b23bb2640dc",
+      "topics": [
+        "Algebra",
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6153846153846154,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-48",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 48,
+      "source_problem_sha256": "a7e7e2966b4269793459e30349fb4550a55e83e1eed5fe59b236b0d053be4f42",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-49",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 49,
+      "source_problem_sha256": "bd9e7bd1b2891330b42e44113211b1f852bb54d93eed18cbc261b384c3c74b37",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-22",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 22,
+      "source_problem_sha256": "43a6e77e319d51f373aeb341f7753267d0461903dae6d20d40cbe12ce98ee13d",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.7333333333333333,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-24",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 24,
+      "source_problem_sha256": "f85cdf30994b70bcba4a9fc6ae45697fb526ab6ca1f57fec9610aed08f57253d",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-26",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 26,
+      "source_problem_sha256": "248d30a35d0e509e9cd2d7f7fd950193944f42f9697ff5138aa3684e29c790cf",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8666666666666667,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-27",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 27,
+      "source_problem_sha256": "055dcf22b844dcde7aceebcdfc0b2bd7731b7930a1642b4fc4ebdfae82a95556",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-29",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 29,
+      "source_problem_sha256": "4ed4abd55c84ed2aec95089ff342187283beaabb05189e2a735f7e8c67695c64",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9666666666666667,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-08",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 8,
+      "source_problem_sha256": "009dcd7834ad8ca57c78d53b8fefeb34ce7f9909e0cb6ddf477a0eb03fe76167",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-09",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 9,
+      "source_problem_sha256": "0cc50b40745cd480a612afb8f916c537e07fdfb98d39de2f72c110ac1bb0de6c",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-10",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 10,
+      "source_problem_sha256": "3addbe442320603c0bd32104e2237e3c7d52d274c73f2e873451702b56221a84",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-18",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 18,
+      "source_problem_sha256": "59aac682921fad3a4332e6fcefdf5a4be0c2fdff8991d970ee0b3e03d1c489ea",
+      "topics": [
+        "Combinatorics",
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-19",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 19,
+      "source_problem_sha256": "3563e4a3d62a5ab7c2e726e5c49903d845527d9073f634a53e2a224d8ac48354",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-20",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 20,
+      "source_problem_sha256": "5bd8d22428b59983b2794a707bf996c74580365163a4d86edc8fad11788b6641",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-29",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 29,
+      "source_problem_sha256": "4e7a772050fe0c95e1677c731a58fa0e1717019c216f8cf33b37d4bbe78e4bcb",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-39",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 39,
+      "source_problem_sha256": "9450143e050bc8d0fdc84f040d1bccbc3181667ad604004e0404b8532443c1e0",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-08",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 8,
+      "source_problem_sha256": "7f1eea7cda7430f32cb0f923f091a52d0361e3e0ced82ef3310b683f1eee321e",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-10",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 10,
+      "source_problem_sha256": "4d3025aeb88582e5ad9e2343f0f25f186d325d810690f37d74648352bf11c912",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-19",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 19,
+      "source_problem_sha256": "4406ececa90b4d3d2b15bd184fbe45c55e839522df282c944c05a945c4f83224",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": [
+        "Repaired HTML line breaks and escaped alignment markers."
+      ]
+    },
+    {
+      "id": "contest-hmmt-feb-2024-20",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 20,
+      "source_problem_sha256": "2942fc47bf8565dbf0520e7eddb573cf6b66b72bd2d9e2d89d152cfef981da73",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-09",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 9,
+      "source_problem_sha256": "d6e306c4614a89d7111d426eb799ad031cddf1c0b80ce21cb909c7f810ee5a47",
+      "topics": [
+        "Algebra",
+        "Number Theory"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-18",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 18,
+      "source_problem_sha256": "7d2bf8a412c891a5bc37646321515d86fb52f69903e680b62e7f701f52b184fe",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-19",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 19,
+      "source_problem_sha256": "3fb4bb93ada6effb1982ee390927b4a064603d63ae3fee1704355fb8926d96c7",
+      "topics": [
+        "Combinatorics",
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-20",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 20,
+      "source_problem_sha256": "caaa8d40dff4a94a699189b71926eb5930da8d7e834ee43fd3e14f94de417bab",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-18",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 18,
+      "source_problem_sha256": "ef91708fd844e176c5147fe60cc11b90a097441df53c2a8ec4fb7d6825db3cd0",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-19",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 19,
+      "source_problem_sha256": "c31d82b0de847fa2c1cf117d9aa95cd4775227ab4461bc93ef8f7f70639f7ab3",
+      "topics": [
+        "Combinatorics",
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-20",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 20,
+      "source_problem_sha256": "149743191ae4392cfd60ba15b866bbd07b9893b67cc37e31a9d972a3c19343e5",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-29",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 29,
+      "source_problem_sha256": "322ee8b2141c1d262202501c1bebb132f352b48e3d58656ae5d950cfa7608916",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-40",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 40,
+      "source_problem_sha256": "a77deceb0dc85d889c4c7e582bbc0470e62faa556b2b0ec1aea81dae3bfc28e6",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.7692307692307693,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-42",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 42,
+      "source_problem_sha256": "a1d6ca66bf212eba7ebcc11bbbe7add1e87b380fe8024c769cd500e816206950",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9230769230769231,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-43",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 43,
+      "source_problem_sha256": "f56c398b3ca09193d93d6b47869664363140b4ac87daf7250d2df38bf6b5dc58",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-53",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 53,
+      "source_problem_sha256": "9f05191bdd37f0394af1da5dacd8ba13620814ce94480795348f4c01f03fafdc",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    }
+  ],
+  "sha256": {
+    "questions.jsonl": "dfcdf412f93d213b4c0e2a0ee0dcb04e06b8a7fcfbe8ffee125bb5639813685d",
+    "answers.jsonl": "b24b7f0c1ae09fea4accfe8c53ad288ab2129845efdb608f1bee83a3aa83c4f3"
+  }
+}

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mathlab"
+version = "0.1.0"
+description = "A small, inspectable maths-agent lab for the Fitzwilliam AI Circle"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = ["openai>=2,<3", "python-dotenv>=1,<2"]
+
+[project.scripts]
+mathlab = "mathlab.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mathlab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -m 'not integration'"
+markers = ["integration: requires Docker and the locally built mathlab image"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "ASYNC"]
+
+[tool.ruff.lint.per-file-ignores]
+# These boundaries receive the context's remaining deadline and enforce it internally.
+"src/mathlab/model.py" = ["ASYNC109"]
+"src/mathlab/python_tool.py" = ["ASYNC109"]
+# Small local records are written synchronously by the sequential v0.1 runner.
+"src/mathlab/runner.py" = ["ASYNC240"]

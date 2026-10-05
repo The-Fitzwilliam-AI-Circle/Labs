@@ -1,0 +1,7 @@
+max_model_requests = 6
+max_output_tokens_per_request = 8192
+max_python_calls = 4
+episode_timeout_seconds = 90
+python_timeout_seconds = 5
+python_output_limit_bytes = 8192
+python_image = "mathlab-python:v0"

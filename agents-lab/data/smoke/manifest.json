@@ -1,0 +1,11 @@
+{
+  "dataset": "Mathlab hand-authored smoke fixtures",
+  "source_url": null,
+  "source_revision": "v0.1",
+  "original_source_ids": [],
+  "selection_notes": "Public plumbing checks: fraction, negative integer, sum, probability, rational arithmetic. Hand-authored for this repository.",
+  "sha256": {
+    "questions.jsonl": "9083c6ede56bcf82a2ff048c0435f8961f8a2ab695720a30bc23cd8ad0d69202",
+    "answers.jsonl": "5f35bda34d1b0f0d2f0e318cfdd7a835d7b672a23f5f443c305d9e7175fa7097"
+  }
+}

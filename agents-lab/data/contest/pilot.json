@@ -1,0 +1,18 @@
+{
+  "frozen_on": "2026-10-05T15:27:27.469578+00:00",
+  "selection": "Four deterministic hash-selected development items per rung, before live runs; retain every result.",
+  "ids": [
+    "contest-cmimc-2025-33",
+    "contest-brumo-2025-10",
+    "contest-hmmt-feb-2025-13",
+    "contest-hmmt-feb-2025-04",
+    "contest-hmmt-feb-2025-15",
+    "contest-smt-2025-25",
+    "contest-smt-2025-05",
+    "contest-smt-2025-49",
+    "contest-hmmt-feb-2025-09",
+    "contest-brumo-2025-26",
+    "contest-brumo-2025-27",
+    "contest-smt-2025-19"
+  ]
+}

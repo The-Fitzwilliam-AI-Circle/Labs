@@ -1,0 +1,145 @@
+{
+  "dataset": "Mathlab hard mathematics: public FrontierMath samples and new variants",
+  "version": "hard-v1",
+  "source_url": "https://epoch.ai/frontiermath/tiers-1-4/benchmark-problems",
+  "credit": "Epoch AI, FrontierMath Sample Problems (2026)",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "retrieved_on": "2026-10-05",
+  "source_fixture": "data/sources/frontiermath-selected.json",
+  "source_fixture_sha256": "acd5d39b3cbaebff3ac21c2478c767dbac839541b34443dc36c12b7260e55c4d",
+  "source_html_sha256": "bb854468715780e971e8167c5e4858ffcdd1a26a24b0f60ef68a3e160e4c9403",
+  "generator_sha256": "e16b5788e0bb55d583254904f01ac8d93f1991363c5d000559e45c2aedb0f666",
+  "reference_sha256": "cbb0b6b7589069cbecdad967f81cb13fda6cb011aa1d915d58705e8ee0a44c3c",
+  "selection_notes": "Seven published integer-answer samples and five adaptations. Frozen before the first live pilot; all twelve candidates retained. Public teaching data, not the private FrontierMath benchmark or an uncontaminated held-out evaluation. Source tiers describe the originals, not independently assigned ratings for variants. References: docs/HARD_REFERENCES.md. Calibration: docs/HARD_CALIBRATION.md.",
+  "selected_questions": [
+    {
+      "id": "hard-001",
+      "family": "polynomial",
+      "title": "Find the degree 19 polynomial",
+      "source_title": "Find the degree 19 polynomial",
+      "source_tier": 2,
+      "variant": false,
+      "changes": []
+    },
+    {
+      "id": "hard-002",
+      "family": "representations",
+      "title": "Orbit counting of matrix tuples",
+      "source_title": "Orbit counting of matrix tuples",
+      "source_tier": 1,
+      "variant": false,
+      "changes": []
+    },
+    {
+      "id": "hard-003",
+      "family": "finite_field",
+      "title": "Counting nonzero solutions of homogeneous equations",
+      "source_title": "Counting nonzero solutions of homogeneous equations",
+      "source_tier": 1,
+      "variant": false,
+      "changes": [
+        "Expanded the source's projective-point/scaling shorthand; same problem."
+      ]
+    },
+    {
+      "id": "hard-004",
+      "family": "permutations",
+      "title": "A recursive construction on large permutations",
+      "source_title": "A recursive construction on large permutations",
+      "source_tier": 2,
+      "variant": false,
+      "changes": []
+    },
+    {
+      "id": "hard-005",
+      "family": "geometry",
+      "title": "Expected perimeter enclosing the center of a 101-gon",
+      "source_title": "Expected perimeter enclosing the center of a 101-gon",
+      "source_tier": 1,
+      "variant": false,
+      "changes": [
+        "Made independence of the diagonal selections explicit."
+      ]
+    },
+    {
+      "id": "hard-006",
+      "family": "asymptotics",
+      "title": "Asymptotics of solutions of a 5-variable equation",
+      "source_title": "Asymptotics of solutions of a 5-variable equation",
+      "source_tier": 2,
+      "variant": false,
+      "changes": [
+        "Made positive integers and ordered solutions explicit."
+      ]
+    },
+    {
+      "id": "hard-007",
+      "family": "banach",
+      "title": "Combinatorics in the Tsirelson space",
+      "source_title": "Combinatorics in the Tsirelson space",
+      "source_tier": 3,
+      "variant": false,
+      "changes": []
+    },
+    {
+      "id": "hard-008",
+      "family": "representations",
+      "title": "Matrix orbits with determinant constraints",
+      "source_title": "Orbit counting of matrix tuples",
+      "source_tier": 1,
+      "variant": true,
+      "changes": [
+        "Added determinant-one constraints; this requires tracking the determinant characters."
+      ]
+    },
+    {
+      "id": "hard-009",
+      "family": "finite_field",
+      "title": "Projective curve over a larger extension",
+      "source_title": "Counting nonzero solutions of homogeneous equations",
+      "source_tier": 1,
+      "variant": true,
+      "changes": [
+        "Changed the extension degree from 18 to 30; reference recomputed."
+      ]
+    },
+    {
+      "id": "hard-010",
+      "family": "permutations",
+      "title": "All inversions after a recursive permutation map",
+      "source_title": "A recursive construction on large permutations",
+      "source_tier": 2,
+      "variant": true,
+      "changes": [
+        "Replaced inversions between consecutive values by all inversions; derived a new expectation."
+      ]
+    },
+    {
+      "id": "hard-011",
+      "family": "polynomial",
+      "title": "A degree 31 polynomial with reducible equal-value locus",
+      "source_title": "Find the degree 19 polynomial",
+      "source_tier": 2,
+      "variant": true,
+      "changes": [
+        "Changed degree and linear coefficient to 31 and -31, and evaluation point to 37."
+      ]
+    },
+    {
+      "id": "hard-012",
+      "family": "geometry",
+      "title": "Expected central perimeter of a random 79-gon dissection",
+      "source_title": "Expected perimeter enclosing the center of a 101-gon",
+      "source_tier": 1,
+      "variant": true,
+      "changes": [
+        "Changed the polygon from 101 to 79 vertices and selection probability to 0.002."
+      ]
+    }
+  ],
+  "sha256": {
+    "questions.jsonl": "405392b2a5f862bd82272b0bbc88e98967a2137edc201a89ce707d9edafcd0e7",
+    "answers.jsonl": "0d65f8d993b234576d3d622658243f3c4b0d029ce2e1d647c4e9df6ccf4eb2ae"
+  }
+}
