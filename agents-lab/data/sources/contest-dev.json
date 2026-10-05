@@ -1,0 +1,1483 @@
+{
+  "dataset": "Mathlab contest mathematics",
+  "version": "contest-v1.1",
+  "split": "development",
+  "frozen_on": "2026-10-05T15:27:27.469578+00:00",
+  "selection_notes": "Disjoint competition editions for development and final validation. Selected before any lab pilot, without using model outputs or leaderboard item scores. Later source positions preferred over openers. Rungs are an ordering heuristic, not empirically calibrated ratings. Only supported scalar keys and text-complete questions are retained. Keys are normalized MathArena references, not independent re-proofs. Public contest questions may have appeared in model training. Broad methods can recur across editions; no claim of mathematical-family independence.",
+  "sources": [
+    {
+      "dataset": "MathArena/hmmt_feb_2024",
+      "url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2024",
+      "revision": "b3cf7fb48814f76142d0847003a5aac0876f3bf4",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2024/resolve/b3cf7fb48814f76142d0847003a5aac0876f3bf4/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "9ca4e8401d4424d98fa0de98436a68d9ff18f12c355625ed4d0b7455bd326734",
+      "card_sha256": "7f51d3e2b7c88b4fc5472c0ee26bc610a1bea132e1a7194b192973fe4a7d80e4",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    },
+    {
+      "dataset": "MathArena/hmmt_feb_2025",
+      "url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2025",
+      "revision": "6fdc4277120810ff75aa22d2d5489b91f7a262a1",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/hmmt_feb_2025/resolve/6fdc4277120810ff75aa22d2d5489b91f7a262a1/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "ccca64d248b89dc0765e40b893fe4ebeab242226a4336027d95d256886a3d5f2",
+      "card_sha256": "c40c205cdcca35b5188a8809bd9cd200612d4d7f1f23bf88e8806efd083b072a",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    },
+    {
+      "dataset": "MathArena/cmimc_2025",
+      "url": "https://huggingface.co/datasets/MathArena/cmimc_2025",
+      "revision": "8f27517ce4ad1d05e023c0e7eca4344754ba2a04",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/cmimc_2025/resolve/8f27517ce4ad1d05e023c0e7eca4344754ba2a04/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "7f290e5564265e57b0fe91c72bde2f1a06ca147148b7787084c54a0354abfcce",
+      "card_sha256": "5bb6c5ecdf48c0ce3f931602d94ed28457f9be2394b69e9a3d96ebbca29b26dc",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    },
+    {
+      "dataset": "MathArena/smt_2025",
+      "url": "https://huggingface.co/datasets/MathArena/smt_2025",
+      "revision": "d8e99d83f1583842f46d4953cd960eea5d887e45",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/smt_2025/resolve/d8e99d83f1583842f46d4953cd960eea5d887e45/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "0818b4eeadefda3fc1f2866dc04a13840c7b359d3f40e5bbcaa4805828be87b0",
+      "card_sha256": "935beccfa0bd61125d51f18fcdd3115872a687cf758ab3f9f7b7fcfe0f27d59a",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    },
+    {
+      "dataset": "MathArena/brumo_2025",
+      "url": "https://huggingface.co/datasets/MathArena/brumo_2025",
+      "revision": "6de9bc0987f5710c6376ee980e1483dbeb55cfda",
+      "parquet_url": "https://huggingface.co/datasets/MathArena/brumo_2025/resolve/6de9bc0987f5710c6376ee980e1483dbeb55cfda/data/train-00000-of-00001.parquet",
+      "parquet_sha256": "ef510deea34c5b6d165c06d020acede1c1031eb91d90336cb4d615d9e55ba391",
+      "card_sha256": "5b3d7f5c6e9cca4ace46e393b62d88127c5ead8aa6645cb9a5918012a47f8164",
+      "license": "CC-BY-NC-SA-4.0",
+      "retrieved_on": "2026-10-05"
+    }
+  ],
+  "records": [
+    {
+      "id": "contest-brumo-2025-06",
+      "problem": "Joshua is playing with his number cards. He has $9$ cards of $9$ lined up in a row. He puts a multiplication sign between two of the $9 \\mathrm{~s}$ and calculates the product of the two strings of $9 \\mathrm{~s}$. For example, one possible result is $999 \\times 999999=998999001$. Let $S$ be the sum of all possible distinct results (note that $999 \\times 999999$ yields the same result as $999999 \\times 999$ ). What is the sum of digits of $S$ ?",
+      "source_answer": "72",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 6,
+      "source_problem_sha256": "f8449b0a2be60f55f6e81b9cad21399879c348e77252b7e3d1f02057fa0e354d",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-07",
+      "problem": "Bruno the Bear is tasked to organize $16$ identical brown balls into $7$ bins labeled 1-7. He must distribute the balls among the bins so that each odd-labeled bin contains an odd number of balls, and each even-labeled bin contains an even number of balls (with $0$ considered even). In how many ways can Bruno do this?",
+      "source_answer": "924",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 7,
+      "source_problem_sha256": "01356db932829c9b510933408d650efd5e7f19324290d82af3e028865f3b38ff",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.23333333333333334,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-08",
+      "problem": "Let $f(n)$ be the number obtained by increasing every prime factor in $n$ by one. For instance, $f(12)=(2+1)^{2}(3+1)=36$. What is the lowest $n$ such that $6^{2025}$ divides $f^{(n)}(2025)$, where $f^{(n)}$ denotes the $n$th iteration of $f$ ?",
+      "source_answer": "20",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 8,
+      "source_problem_sha256": "c5d7f20626d22095d6b0e6dd78601494cd0d274559fa511d11f515b4506fe85f",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.26666666666666666,
+      "changes": [
+        "Corrected f to n in the definition, consistent with the supplied example."
+      ]
+    },
+    {
+      "id": "contest-brumo-2025-09",
+      "problem": "How many positive integer divisors of $63^{10}$ do not end in a $1$ ?",
+      "source_answer": "173",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 9,
+      "source_problem_sha256": "02ecbaeb96d6d2cd6a724bf753a19455207ba1981332bff96c4a0f04e828cc58",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-10",
+      "problem": "Bruno is throwing a party and invites $n$ guests. Each pair of party guests are either friends or enemies. Each guest has exactly $12$ enemies. All guests believe the following: the friend of an enemy is an enemy. Calculate the sum of all possible values of $n$. (Please note: Bruno is not a guest at his own party)",
+      "source_answer": "100",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 10,
+      "source_problem_sha256": "f8c02cb3d09d4760eae6382dee6ed1e1df42fad5f83df54aca34f69447eeceb1",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3333333333333333,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-12",
+      "problem": "Alice has $10$ gifts $g_{1}, g_{2}, \\ldots, g_{10}$ and $10$ friends $f_{1}, f_{2}, \\ldots, f_{10}$. Gift $g_{i}$ can be given to friend $f_{j}$ if\n\n$$\ni-j=-1,0, \\text { or } 1 \\quad(\\bmod 10)\n$$\n\nHow many ways are there for Alice to pair the $10$ gifts with the $10$ friends such that each friend receives one gift?",
+      "source_answer": "125",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 12,
+      "source_problem_sha256": "78fbb6aa59379c2751e5fb19a3a27500bd3f92711b6eb41f04179d10dfc7def6",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-03",
+      "problem": "Compute $3^{3^{\\cdots^{3}}} \\bmod 333$, where there are $3^{3^{3}} 3$ 's in the exponent.",
+      "source_answer": "36",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 3,
+      "source_problem_sha256": "24714d3485caa846c829f18811c2e161326830847a643e77c4d09fff06603881",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-04",
+      "problem": "Consider the system of equations\n\n$$\n\\begin{gathered}\n\\log _{x} y+\\log _{y} z+\\log _{z} x=8 \\\\\n\\log _{\\log _{y} x} z=-3 \\\\\n\\log _{z} y+\\log _{x} z=16\n\\end{gathered}\n$$\n\nFind $z$.",
+      "source_answer": "64",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 4,
+      "source_problem_sha256": "37c82c257858bbc46302495ea6a0cd525e091b581b19617639192247309af6a7",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-13",
+      "problem": "There are $34$ friends are sitting in a circle playing the following game. Every round, four of them are chosen at random, and have a rap battle. The winner of the rap battle stays in the circle and the other three leave. This continues until one player remains. Everyone has equal rapping ability, i.e. every person has equal probability to win a round. What is the probability that Michael and James end up battling in the same round?",
+      "source_answer": "\\frac{2}{17}",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 13,
+      "source_problem_sha256": "0064411bf499f5cd7321d352a13662590908d5af70986b0015f5dbf6027cb2de",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-14",
+      "problem": "Let $n$ and $k$ be positive integers, with $k \\leq n$. Define a (simple, undirected) graph $G_{n, k}$ as follows: its vertices are all of the binary strings of length $n$, and there is an edge between two strings if and only if they differ in exactly $k$ positions. If $c_{n, k}$ denotes the number of connected components of $G_{n, k}$, compute\n\n$$\n\\sum_{n=1}^{10} \\sum_{k=1}^{n} c_{n, k}\n$$\n(For example, $G_{3,2}$ has two connected components.)",
+      "source_answer": "1088",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 14,
+      "source_problem_sha256": "7180ab8b3dc761753fd9d125dae48b75cb23c8df37cfeab32e9bf993b40572a3",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-33",
+      "problem": "Let $f(x)=x^{4}-4 x^{2}+2$. Find the smallest natural $n \\in \\mathbb{N}$ such that there exists $k, c \\in \\mathbb{N}$ with\n\n$$\n\\left|f^{k}\\left(\\frac{n^{2}+1}{n}\\right)-c^{144}\\right|<\\frac{1}{100} .\n$$",
+      "source_answer": "512",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 33,
+      "source_problem_sha256": "51d80dd40f24ef3f5e915b3c177f7df2845119c9199c0a744f54045412ff882c",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-34",
+      "problem": "A non-self intersecting hexagon $R A N D O M$ is formed by assigning the labels $R, A, N, D, O, M$ in some order to the points\n$$\n(0,0),(10,0),(10,10),(0,10),(3,4),(6,2) .\n$$\n\nLet $a_{\\text {max }}$ be the greatest possible area of $R A N D O M$ and $a_{\\text {min }}$ the least possible area of $R A N D O M$. Find $a_{\\text {max }}-a_{\\text {min }}$.",
+      "source_answer": "44",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 34,
+      "source_problem_sha256": "54502ffa72dc011dd131fc22fad5fe992e67af8e15b8b5e80ab1771c4a653969",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-02",
+      "problem": "Suppose $a$ and $b$ are positive integers. Isabella and Vidur both fill up an $a \\times b$ table. Isabella fills it up with numbers $1,2, \\ldots, a b$, putting the numbers $1,2, \\ldots, b$ in the first row, $b+1, b+2, \\ldots, 2 b$ in the second row, and so on. Vidur fills it up like a multiplication table, putting $i j$ in the cell in row $i$ and column $j$. (Examples are shown for a $3 \\times 4$ table below.)\n\n$$\n\\begin{array}{cccc}\n1 & 2 & 3 & 4 \\\\\n5 & 6 & 7 & 8 \\\\\n9 & 10 & 11 & 12\n\\end{array}\n$$\n\nIsabella's Grid\n\n$$\n\\begin{array}{cccc}\n1 & 2 & 3 & 4 \\\\\n2 & 4 & 6 & 8 \\\\\n3 & 6 & 9 & 12\n\\end{array}\n$$\n\nVidur's Grid\n\nIsabella sums up the numbers in her grid, and Vidur sums up the numbers in his grid; the difference between these two quantities is $1200$. Compute $a+b$.",
+      "source_answer": "21",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 2,
+      "source_problem_sha256": "21136855d0c9159067957145a4e3de6af9beb23b6df3a5a6d1acc4a42855e5d9",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-03",
+      "problem": "Compute the sum of all two-digit positive integers $x$ such that for all three-digit (base 10) positive integers $\\underline{a} \\underline{b} \\underline{c}$, if $\\underline{a} \\underline{b} \\underline{c}$ is a multiple of $x$, then the three-digit (base 10) number $\\underline{b} \\underline{c} \\underline{a}$ is also a multiple of $x$.",
+      "source_answer": "64",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 3,
+      "source_problem_sha256": "fa4a0a7a9095f0f58625f754d2770bc6fb0ef43f813f57595b881028335594dc",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-04",
+      "problem": "Let $f(x)$ be a quotient of two quadratic polynomials. Given that $f(n)=n^{3}$ for all $n \\in\\{1,2,3,4,5\\}$, compute $f(0)$.",
+      "source_answer": "\\dfrac{24}{17}",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 4,
+      "source_problem_sha256": "f2535193fc55fce9fbb4e6695a1a8b2b08deaee1d9bab1b636147c4f42ec80ab",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-12",
+      "problem": "A lame king is a chess piece that can move from a cell to any cell that shares at least one vertex with it, except for the cells in the same column as the current cell.\nA lame king is placed in the top-left cell of a $7 \\times 7$ grid. Compute the maximum number of cells it can visit without visiting the same cell twice (including its starting cell).",
+      "source_answer": "43",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 12,
+      "source_problem_sha256": "f87dd2d5e429b110961ee6a2e337b2372645ddd8203203df9309835a5f9b0fbe",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-13",
+      "problem": "Compute the number of ways there are to assemble $2$ red unit cubes and $25$ white unit cubes into a $3 \\times 3 \\times 3$ cube such that red is visible on exactly $4$ faces of the larger cube. (Rotations and reflections are considered distinct.)",
+      "source_answer": "114",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 13,
+      "source_problem_sha256": "271e25f3c5355bb6b7f3a28395321ee1d9a6cbc78ca63927a638b3261182fa8c",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-14",
+      "problem": "Sally the snail sits on the $3 \\times 24$ lattice of points $(i, j)$ for all $1 \\leq i \\leq 3$ and $1 \\leq j \\leq 24$. She wants to visit every point in the lattice exactly once. In a move, Sally can move to a point in the lattice exactly one unit away. Given that Sally starts at $(2,1)$, compute the number of possible paths Sally can take.",
+      "source_answer": "4096",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 14,
+      "source_problem_sha256": "570619c2636c86edd19963e5a5159b66e093844ac6613359cf956e3ee494e806",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-23",
+      "problem": "Let $\\Omega$ and $\\omega$ be circles with radii $123$ and $61$, respectively, such that the center of $\\Omega$ lies on $\\omega$. A chord of $\\Omega$ is cut by $\\omega$ into three segments, whose lengths are in the ratio $1: 2: 3$ in that order. Given that this chord is not a diameter of $\\Omega$, compute the length of this chord.",
+      "source_answer": "42",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 23,
+      "source_problem_sha256": "994eb99eb7f84ff1bbbd182ec7675707f9db24690245d549027a2640e8dcaaa8",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-24",
+      "problem": "Let $A B C D$ be a square, and let $\\ell$ be a line passing through the midpoint of segment $\\overline{A B}$ that intersects segment $\\overline{B C}$. Given that the distances from $A$ and $C$ to $\\ell$ are $4$ and $7$, respectively, compute the area of $A B C D$.",
+      "source_answer": "185",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 24,
+      "source_problem_sha256": "bb212af83a34ed9d1d641fe465462b0e1798d0a856e889b3d1f8c2b292fcaf62",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-02",
+      "problem": "Mark writes the expression $\\sqrt{\\underline{a b c d}}$ on the board, where $\\underline{a b c d}$ is a four-digit number and $a \\neq 0$. Derek, a toddler, decides to move the $a$, changing Mark's expression to $a \\sqrt{\\underline{b c d}}$. Surprisingly, these two expressions are equal. Compute the only possible four-digit number $\\underline{a b c d}$.",
+      "source_answer": "3375",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 2,
+      "source_problem_sha256": "da5b45fda997dc49709ae8e74f7a97054aeb15be8eb9f8c16d2683f5f37b73cd",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-03",
+      "problem": "Given that $x, y$, and $z$ are positive real numbers such that\n\n$$\nx^{\\log _{2}(y z)}=2^{8} \\cdot 3^{4}, \\quad y^{\\log _{2}(z x)}=2^{9} \\cdot 3^{6}, \\quad \\text { and } \\quad z^{\\log _{2}(x y)}=2^{5} \\cdot 3^{10}\n$$\ncompute the smallest possible value of $x y z$.",
+      "source_answer": "\\frac{1}{576}",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 3,
+      "source_problem_sha256": "d2c6928d82be85cfb19d408f21f81e854b30c010b2d7dfac98e567883d20ff81",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-04",
+      "problem": "Let $\\lfloor z\\rfloor$ denote the greatest integer less than or equal to $z$. Compute\n\n$$\n\\sum_{j=-1000}^{1000}\\left\\lfloor\\frac{2025}{j+0.5}\\right\\rfloor\n$$",
+      "source_answer": "-984",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 4,
+      "source_problem_sha256": "9e36e772093cd372eeb362163c9c4643aec04ca25457cd01cad47a8603a8b999",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-13",
+      "problem": "Ben has $16$ balls labeled $1,2,3, \\ldots, 16$, as well as $4$ indistinguishable boxes. Two balls are \\emph{neighbors} if their labels differ by $1$. Compute the number of ways for him to put $4$ balls in each box such that each ball is in the same box as at least one of its neighbors. (The order in which the balls are placed does not matter.)",
+      "source_answer": "105",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 13,
+      "source_problem_sha256": "2512a9ba7a4b5924072fda32d58679cb573f9cdebefdd7878ac8469513853b2f",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-14",
+      "problem": "Sophie is at $(0,0)$ on a coordinate grid and would like to get to $(3,3)$. If Sophie is at $(x, y)$, in a single step she can move to one of $(x+1, y),(x, y+1),(x-1, y+1)$, or $(x+1, y-1)$. She cannot revisit any points along her path, and neither her $x$-coordinate nor her $y$-coordinate can ever be less than $0$ or greater than 3. Compute the number of ways for Sophie to reach $(3,3)$.",
+      "source_answer": "2304",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 14,
+      "source_problem_sha256": "35e5ed41fd4a356503ab8b398b1388b588f72551bc89d89e81c01f2ce0054d37",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-24",
+      "problem": "A semicircle is inscribed in another semicircle if the smaller semicircle's diameter is a chord of the larger semicircle, and the smaller semicircle's arc is tangent to the diameter of the larger semicircle.\nSemicircle $S_{1}$ is inscribed in a semicircle $S_{2}$, which is inscribed in another semicircle $S_{3}$. The radii of $S_{1}$ and $S_{3}$ are $1$ and 10, respectively, and the diameters of $S_{1}$ and $S_{3}$ are parallel. The endpoints of the diameter of $S_{3}$ are $A$ and $B$, and $S_{2}$ 's arc is tangent to $A B$ at $C$. Compute $A C \\cdot C B$.",
+      "source_answer": "20",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 24,
+      "source_problem_sha256": "4423f2b6ebfe9bc9f80ab6db1a757aff644459ff3d899f4489009fc8cabe3ecc",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": [
+        "Removed redundant TikZ drawing; all geometric constraints remain in text."
+      ]
+    },
+    {
+      "id": "contest-smt-2025-03",
+      "problem": "Given real constants $a, b, c$, define the cubic polynomials\n\n$$\n\\begin{aligned}\n& A(x)=a x^{3}+a b x^{2}-4 x-c \\\\\n& B(x)=b x^{3}+b c x^{2}-6 x-a \\\\\n& C(x)=c x^{3}+c a x^{2}-9 x-b\n\\end{aligned}\n$$\n\nGiven that $A, B$, and $C$ have local extrema at $b, c$, and $a$, respectively, compute $a b c$. (A local extremum is either a local maximum or a local minimum.)",
+      "source_answer": "\\frac{6}{5}",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 3,
+      "source_problem_sha256": "f6897bbe63d0292a333b6f91c5ff73e5857807cdde62a11137c0fe5ff13bc6b8",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-04",
+      "problem": "Let $f$ be a continuous function satisfying $f\\left(x^{7}+6 x^{5}+3 x^{3}+1\\right)=9 x+5$ for all reals $x$. Compute the integral\n\n$$\n\\int_{-9}^{11} f(x) \\mathrm{d} x .\n$$",
+      "source_answer": "100",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 4,
+      "source_problem_sha256": "bb162e46aeeace9cd3e8679acb7448912c8eb7684b09d76d770a2ca48ea4a5e7",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-13",
+      "problem": "In a $3 \\times 3$ grid, exactly one of the two possible diagonals is drawn in each of the nine cells. Compute the number of ways to choose the diagonals such that there is a continuous path along diagonals from the bottom-left vertex to the top-right vertex.",
+      "source_answer": "79",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 13,
+      "source_problem_sha256": "1e543a29a1449ad73f1ebf699e73e4860b622b836ab066d69b61e2486200a555",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-14",
+      "problem": "Professor Matrix Tessellation Laplace is thinking of two positive odd numbers (not necessarily distinct). Given that their product has exactly $15$ positive divisors, compute the smallest possible sum of these two numbers.",
+      "source_answer": "90",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 14,
+      "source_problem_sha256": "d3ea1b3b269633e950e94092a7b84f77af1a4f02be99a74a6e138f9ee71c1fed",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-23",
+      "problem": "Let $\\Omega$ be a circle. Draw two radii $r_{1}$ and $r_{2}$ of $\\Omega$ that form a $40^{\\circ}$ angle, and let $\\omega$ be a circle which is tangent to both of these radii and internally tangent to $\\Omega$. Let $\\omega$ be tangent to $\\Omega$ and $r_{1}$ at $A$ and $B$, respectively, and let $r_{1}$ meet $\\Omega$ at $C$. Compute $\\angle A B C$.",
+      "source_answer": "55",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 23,
+      "source_problem_sha256": "e47c84e87c6d55f05aaa7cf208b30dff23ae407ffa7bd02512b257d0fcdc0467",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-33",
+      "problem": "Alice has four sticks of lengths $3,3,5$, and $x$. She notices that it is possible to make a cyclic quadrilateral by joining these sticks at their endpoints, and no matter how she makes this cyclic quadrilateral, it always has a diagonal of length $6$. Compute $x$.",
+      "source_answer": "\\frac{27}{5}",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 33,
+      "source_problem_sha256": "14a499461d32f401d0985d06a55b122dfd7d8b6a68d79108b3f4609ec2df104d",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.23076923076923078,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-34",
+      "problem": "Archimedes, Basil, Cleopatra, Diophantus, and Euclid each made exactly one claim, listed below in some order:\n\n\\begin{enumerate}\n\\item At least two of the five statements are false.\n\\item Each interior angle of a regular pentagon has angle measure $108^{\\circ}$.\n\\item $2025$ is divisible by $4$.\n\\item Diophantus said the truth.\n\\item Euclid said the truth.\n\\end{enumerate}\nPythagoras is attempting to label each claim with the person who made it. A labeling is determinable if there exists a unique valid assignment of truth values (TRUE or FALSE) to the five claims such that the system of claims is consistent with the truth values. Compute the number of determinable labelings.\n\nFor example, consider the labeling of Archimedes to 1, Basil to 2, Cleopatra to 3, Diophantus to 4, and Euclid to $5$. Then one valid (but not unique) assignment of truth values is:\n\n1. TRUE 2. TRUE 3. FALSE 4. TRUE 5. FALSE.",
+      "source_answer": "66",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 34,
+      "source_problem_sha256": "3936ee7c63e7ea79efb19f6df69c758de3821a5ab3bb3e1c129649360f51f829",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3076923076923077,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-45",
+      "problem": "Six friends-Andrea, Blake, Camila, Dean, Ethan, and Francis-drink a combined total of $32$ cups of boba. Each person drinks at least one cup, no two friends drink the same number of cups, and each cup is fully finished by a single person. One friend, known as the \"Boba Champion\", drinks as many cups as all the others combined. Compute the product of the number of cups of boba consumed by the five friends who aren't the Boba Champion.",
+      "source_answer": "144",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 45,
+      "source_problem_sha256": "38601a39bb228595b0fa1d8f0f652a6017138263f95b34b9ad9310f8734a1547",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.2,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-46",
+      "problem": "The absolute values of all three roots of the polynomial $x^{3}-147 x+c$ are primes. Compute $|c|$. (A prime number is a positive integer greater than $1$ whose only positive divisors are $1$ and itself.)",
+      "source_answer": "286",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 46,
+      "source_problem_sha256": "521f772708dab3734a3d8a6437ff21f8746ab82f6f6feb57efa6d4f8953a5002",
+      "topics": [
+        "Algebra",
+        "Number Theory"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.3,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-47",
+      "problem": "Compute the sum of the real roots of $\\left(x^{2}+16 x+48\\right)\\left(x^{2}+24 x+128\\right)=44^{2^{2025}}$. (Roots are counted with multiplicity.)",
+      "source_answer": "-20",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 47,
+      "source_problem_sha256": "19ea8e01a8026d2ee0d3be47c1b27527bd0a522f19153e54fbffdb13cd9cb7f6",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "01-contest",
+      "ordering_proxy": 0.4,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-13",
+      "problem": "Let $\\triangle A B C$ be an equilateral triangle with side length $1$. A real number $d$ is selected uniformly at random from the open interval $(0,0.5)$. Points $E$ and $F$ lie on sides $A C$ and $A B$, respectively, such that $A E=d$ and $A F=1-d$. Let $D$ be the intersection of lines $B E$ and $C F$.\n\nConsider line $\\ell$ passing through both points of intersection of the circumcircles of triangles $\\triangle D E F$ and $\\triangle D B C . O$ is the circumcenter of $\\triangle D E F$. Line $\\ell$ intersects line $\\overleftrightarrow{B C}$ at point $P$, and point $Q$ lies on $A P$ such that $\\angle A Q B=120^{\\circ}$. What is the probability that the line segment $\\overline{Q O}$ has length less than $\\frac{1}{3}$ ?",
+      "source_answer": "\\frac{1}{3}",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 13,
+      "source_problem_sha256": "e0aef49ba2cbb5d382831466fc09f4a692d1513f1fa233337b3b309f38202233",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.43333333333333335,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-14",
+      "problem": "Define sequence $\\left\\{a_{n}\\right\\}_{n=1}^{\\infty}$ such that $a_{1}=\\frac{\\pi}{3}$ and $a_{n+1}=\\cot ^{-1}\\left(\\csc \\left(a_{n}\\right)\\right)$ for all positive integers $n$. Find the value of\n\n$$\n\\frac{1}{\\cos \\left(a_{1}\\right) \\cos \\left(a_{2}\\right) \\cos \\left(a_{3}\\right) \\cdots \\cos \\left(a_{16}\\right)}\n$$",
+      "source_answer": "7",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 14,
+      "source_problem_sha256": "49bd2edf1841c26813764128e7f89b9dc59b4e574d26e7830827c6d1c676b945",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.4666666666666667,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-15",
+      "problem": "Define $\\{x\\}$ to be the fractional part of $x$. For example, $\\{20.25\\}=0.25$ and $\\{\\pi\\}=\\pi-3$. Let $A=\\sum_{a=1}^{96} \\sum_{n=1}^{96}\\left\\{\\frac{a^{n}}{97}\\right\\}$, where $\\{x\\}$ denotes the fractional part of $x$. Compute $A$ rounded to the nearest integer.",
+      "source_answer": "4529",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 15,
+      "source_problem_sha256": "5b5b060ad9c2d8cd40c2f575510bdc1197d893bb05eb539161c9a99f7448f9ba",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-16",
+      "problem": "Find the smallest positive integer $n$ such that $n$ is divisible by exactly $25$ different positive integers.",
+      "source_answer": "1296",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 16,
+      "source_problem_sha256": "d1d996e34b093f64a14466883c95907d7b7bdde89289a33d637c824b99961830",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5333333333333333,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-19",
+      "problem": "What is the smallest positive integer $n$ such that $z^{n}-1$ and $(z-\\sqrt{3})^{n}-1$ share a common complex root?",
+      "source_answer": "12",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 19,
+      "source_problem_sha256": "1c6920d5f908f475f408529239028a3ad5f4229ede47bbd4121e0096162046ca",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6333333333333333,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-20",
+      "problem": "Consider a pond with lily pads numbered from $1$ to $12$ arranged in a circle. Bruno the frog starts on lily pad 1. Each turn, Bruno has an equal probability of making one of three moves: jumping $4$ lily pads clockwise, jumping $2$ lily pads clockwise, or jumping $1$ lily pad counterclockwise. What is the expected number of turns for Bruno to return to lily pad $1$ for the first time?",
+      "source_answer": "12",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 20,
+      "source_problem_sha256": "72a929ebcb531595c74f09d680ae78c45ea96a842cc554fe4e8e8deac0fc074c",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6666666666666666,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-21",
+      "problem": "$4$ bears - Aruno, Bruno, Cruno and Druno - are each given a card with a positive integer and are told that the sum of their $4$ numbers is $17$. They cannot show each other their cards, but discuss a series of observations in the following order:\n\nAruno: \"I think it is possible that the other three bears all have the same card.\"\nBruno: \"At first, I thought it was possible for the other three bears to have the same card. Now I know it is impossible for them to have the same card.\"\nCruno: \"I think it is still possible that the other three bears have the same card.\"\nDruno: \"I now know what card everyone has.\"\nWhat is the product of their four card values?",
+      "source_answer": "160",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 21,
+      "source_problem_sha256": "28b20bf184a6f3890ae2cab88c7469947cebf669121ed38200eab8ab483489ea",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-05",
+      "problem": "Consider all positive multiples of $77$ less than $1,000,000$. What is the sum of all the odd digits that show up?",
+      "source_answer": "194832",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 5,
+      "source_problem_sha256": "e5d3d183e6c345f4260fefdf5fb5836ca29e63ae96b628072b5bd0b057a80f86",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-06",
+      "problem": "Real numbers $x$ and $y$ are chosen independently and uniformly at random from the interval $[-1,1]$. Find the probability that\n\n$$\n|x|+|y|+1 \\leq 3 \\min \\{|x+y+1|,|x+y-1|\\} .\n$$",
+      "source_answer": "\\frac{5}{16}",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 6,
+      "source_problem_sha256": "673927f6a93ed3064cf3db0d2f2e718a8094dadf37b817a6a2e95263e1e93553",
+      "topics": [
+        "Algebra",
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-07",
+      "problem": "Consider a recursively defined sequence $a_{n}$ with $a_{1}=1$ such that, for $n \\geq 2, a_{n}$ is formed by appending the last digit of $n$ to the end of $a_{n-1}$. For a positive integer $m$, let $\\nu_{3}(m)$ be the largest integer $t$ such that $3^{t} \\mid m$. Compute\n\n$$\n\\sum_{n=1}^{810} \\nu_{3}\\left(a_{n}\\right) .\n$$",
+      "source_answer": "930",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 7,
+      "source_problem_sha256": "b772ba6cbf2358ed81ffea361c0b9b00607c6c0ac25b3ac57417e34f6dd8875d",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": [
+        "Corrected published reference key from 930 to 932; question unchanged. See answer_correction and data/contest/CORRECTIONS.md."
+      ],
+      "answer_correction": {
+        "source_answer": "930",
+        "answer": "932",
+        "reason": "Independent exact enumeration gives 932. The original solution truncates valuations of a_(10m-2) at exponent 6; a_798 has valuation 8, adding two. Valuation frequencies for n=1..810: {0:243,1:324,2:162,3:54,4:18,5:6,6:2,8:1}.",
+        "source_solution_url": "https://cmimc.com/archive/cmimc2025/algnt_sol.pdf",
+        "verification": "tests/test_contest.py; exact big-integer recurrence and independent modular divisibility counts. No model outputs used."
+      }
+    },
+    {
+      "id": "contest-cmimc-2025-15",
+      "problem": "Consider a $12$-card deck containing all four suits of $2,3$, and $4$. A double is defined as two cards directly next to each other in the deck, with the same value. Suppose we scan the deck left to right, and whenever we encounter a double, we remove all the cards up to that point (including the double). Let $N$ denote the number of times we have to remove cards. What is the expected value of $N$ ?",
+      "source_answer": "\\frac{138}{55}",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 15,
+      "source_problem_sha256": "99ebf29c59d4951237c99c207d71bfaa4dff1d146c92bffc465c93ed4a257985",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-16",
+      "problem": "Consider a $4 \\times 4$ grid of squares. We place coins in some of the grid squares so that no two coins are orthogonally adjacent, and each $2 \\times 2$ square in the grid has at least one coin. How many ways are there to place the coins?",
+      "source_answer": "256",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 16,
+      "source_problem_sha256": "ae4c471ff66a84861120c56c6f79a1ab52f7d092a65ff24f578277eca63e2f89",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-26",
+      "problem": "Points $A, B, C, D, E$, and $F$ lie on a sphere with center $O$ and radius $R$ such that $\\overline{A B}, \\overline{C D}$, and $\\overline{E F}$ are pairwise perpendicular and all meet at a point $X$ inside the sphere. If $A X=1$, $C X=\\sqrt{2}, E X=2$, and $O X=\\frac{\\sqrt{2}}{2}$, compute the sum of all possible values of $R^{2}$.",
+      "source_answer": "\\frac{31}{7}",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 26,
+      "source_problem_sha256": "ffd042288102220d90a3482eaeeaa5d419882799f93321b402089d3f632a4419",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-35",
+      "problem": "Suppose we have a uniformly random function from $\\{1,2,3, \\ldots, 25\\}$ to itself. Find the expected value of\n\n$$\n\\sum_{x=1}^{25}(f(f(x))-x)^{2}\n$$",
+      "source_answer": "2496",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 35,
+      "source_problem_sha256": "18d23b00cfe7cdf2ffdd2ade672900cdcd89de2285d26370b5c211e039b4ee02",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-37",
+      "problem": "The binomial coefficient $\\binom{n}{k}$ can be defined as the coefficient of $x^{k}$ in the expansion of $(1+x)^{n}$. Similarly, define the trinomial coefficient $\\binom{n}{k}_{3}$ as the coefficient of $x^{k}$ in the expansion of $(1+x+$ $\\left.x^{2}\\right)^{n}$.\nDetermine the number of integers $k$ with $0 \\leq k \\leq 4048$ such that $\\binom{2024}{k}_{3} \\equiv 1 \\bmod 3$.",
+      "source_answer": "648",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 37,
+      "source_problem_sha256": "70f0bfcfeabfec97386380b05b176a3f5eadc0d7551c6dc7d9482485bbf55a8c",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-06",
+      "problem": "Compute the sum of all positive integers $n$ such that $50 \\leq n \\leq 100$ and $2 n+3$ does not divide $2^{n!}-1$.",
+      "source_answer": "222",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 6,
+      "source_problem_sha256": "0619b1eb32f8c0971c569bf68d03810fbacf04a4a58aaac08b8e764f82195e7d",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-07",
+      "problem": "Let $P(n)=\\left(n-1^{3}\\right)\\left(n-2^{3}\\right) \\ldots\\left(n-40^{3}\\right)$ for positive integers $n$. Suppose that $d$ is the largest positive integer that divides $P(n)$ for every integer $n>2023$. If $d$ is a product of $m$ (not necessarily distinct) prime numbers, compute $m$.",
+      "source_answer": "48",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 7,
+      "source_problem_sha256": "49bb924f2b48c1290e59f8cb67187df59f837fbce41920ea330536d0d608607d",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-15",
+      "problem": "The country of HMMTLand has $8$ cities. Its government decides to construct several two-way roads between pairs of distinct cities. After they finish construction, it turns out that each city can reach exactly $3$ other cities via a single road, and from any pair of distinct cities, either exactly $0$ or $2$ other cities can be reached from both cities by a single road. Compute the number of ways HMMTLand could have constructed the roads.",
+      "source_answer": "875",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 15,
+      "source_problem_sha256": "cf64f1a50a71c15a4fbe7595e31b31f87de05538a0afb9718ec3e7cc0df9cdcb",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-16",
+      "problem": "In each cell of a $4 \\times 4$ grid, one of the two diagonals is drawn uniformly at random. Compute the probability that the resulting $32$ triangular regions can be colored red and blue so that any two regions sharing an edge have different colors.",
+      "source_answer": "\\dfrac{1}{512}",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 16,
+      "source_problem_sha256": "c079864b81a27622d8468ed4d5248cab8a802d9c7700b761dd44122526aa1753",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-17",
+      "problem": "There is a grid of height $2$ stretching infinitely in one direction. Between any two edge-adjacent cells of the grid, there is a door that is locked with probability $\\frac{1}{2}$ independent of all other doors. Philip starts in a corner of the grid (in the starred cell). Compute the expected number of cells that Philip can reach, assuming he can only travel between cells if the door between them is unlocked.",
+      "source_answer": "\\dfrac{32}{7}",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 17,
+      "source_problem_sha256": "b669b3961a0e9109f1ec49ba2e9aeff8a82f53b5b0b327324108d0f0ea8187a1",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-26",
+      "problem": "In triangle $A B C$, a circle $\\omega$ with center $O$ passes through $B$ and $C$ and intersects segments $\\overline{A B}$ and $\\overline{A C}$ again at $B^{\\prime}$ and $C^{\\prime}$, respectively. Suppose that the circles with diameters $B B^{\\prime}$ and $C C^{\\prime}$ are externally tangent to each other at $T$. If $A B=18, A C=36$, and $A T=12$, compute $A O$.",
+      "source_answer": "\\dfrac{65}{3}",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 26,
+      "source_problem_sha256": "0afa8921f53aea0df2c82ab38a3b0412a88f9cbb1210bc3d9b125706692d7936",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-05",
+      "problem": "Let $\\mathcal{S}$ be the set of all nonconstant monic polynomials $P$ with integer coefficients satisfying $P(\\sqrt{3}+\\sqrt{2})=$ $P(\\sqrt{3}-\\sqrt{2})$. If $Q$ is an element of $\\mathcal{S}$ with minimal degree, compute the only possible value of $Q(10)-Q(0)$.",
+      "source_answer": "890",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 5,
+      "source_problem_sha256": "f280922d560c6905b16cd34266c3393d6bfbc4308a103816ba367d6251475d3d",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-06",
+      "problem": "Let $r$ be the remainder when $2017^{2025!}-1$ is divided by 2025!. Compute $\\frac{r}{2025!}$. (Note that $2017$ is prime.)",
+      "source_answer": "\\frac{1311}{2017}",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 6,
+      "source_problem_sha256": "6c5c46572457a70ed1f6d9ad0ce032e0582462a5fc774cf7f4d622576ab20e40",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-15",
+      "problem": "In an $11 \\times 11$ grid of cells, each pair of edge-adjacent cells is connected by a door. Karthik wants to walk a path in this grid. He can start in any cell, but he must end in the same cell he started in, and he cannot go through any door more than once (not even in opposite directions). Compute the maximum number of doors he can go through in such a path.",
+      "source_answer": "200",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 15,
+      "source_problem_sha256": "e103f900aaa1d05ff2d7aa86d29e62fc24a18bddfbf6556997579dbbb90f574f",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-16",
+      "problem": "Compute the number of ways to pick two rectangles in a $5 \\times 5$ grid of squares such that the edges of the rectangles lie on the lines of the grid and the rectangles do not overlap at their interiors, edges, or vertices. The order in which the rectangles are chosen does not matter.",
+      "source_answer": "6300",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 16,
+      "source_problem_sha256": "94b3e48ab24acfe4d765b39263ccb7936967215cb896ff33e031126a57ef0f44",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-27",
+      "problem": "Point $P$ is inside triangle $\\triangle A B C$ such that $\\angle A B P=\\angle A C P$. Given that $A B=6, A C=8, B C=7$, and $\\frac{B P}{P C}=\\frac{1}{2}$, compute $\\frac{[B P C]}{[A B C]}$.\n(Here, $[X Y Z]$ denotes the area of $\\triangle X Y Z$ ).",
+      "source_answer": "\\frac{7}{18}",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 27,
+      "source_problem_sha256": "06c279c744c8872282089b03cf0a041686a6efe37ac3a83e68a403b967de8e04",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-05",
+      "problem": "Consider the set of all continuous and infinitely differentiable functions $f$ with domain $[0,2025]$ satisfying $f(0)=0, f^{\\prime}(0)=0, f^{\\prime}(2025)=1$, and $f^{\\prime \\prime}$ being strictly increasing on the interval $[0,2025]$. Compute the smallest real number $M$ such that for all functions $f$ in this set, $f(2025)<M$.",
+      "source_answer": "\\frac{2025}{2}",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 5,
+      "source_problem_sha256": "71d9b070c986510ea68ce0aaa7a3349b766651f69014a944e917f58d506469e1",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-15",
+      "problem": "Consider an axis-aligned $4$ dimensional cube with side length $4$, subdivided into $4^{4}$ unit cubes. Cubey the penguin starts at a random unit cube. Each second, he can move to an adjacent unit cube along any one of the four axes. A fish is independently placed in a uniformly random unit cube (possibly the same one as Cubey's starting position) and the fish does not move (it's a fish out of water). Compute the expected time in seconds that Cubey will take to catch the fish, assuming he moves optimally to reach the fish as fast as possible.",
+      "source_answer": "5",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 15,
+      "source_problem_sha256": "097dc2731cd635ea980a4285bb9cb0c5e17af221c578f2e0cab2602db5ae0d9b",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-16",
+      "problem": "Define the function $f(n)$ to be the remainder when $\\binom{n}{20}$ is divided by $23$. Find $f(20)+f(21)+$ $\\cdots+f(2023)$.",
+      "source_answer": "2024",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 16,
+      "source_problem_sha256": "85f5de4ca45f5cbba2505905f7268d1b25bb5fe89cf09210974b134729a37bda",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-17",
+      "problem": "Professor Matrix Tessellation Laplace arranges all of the integers from $1$ to $99999$ (inclusive) in the order that maximizes the gigantic number formed by concatenating them. In his order, the number $2025$ appears as the $i$-th integer from left to right. Find $i$.\n(Formally, he sets the permutation $\\sigma=\\left(\\sigma_{1}, \\ldots, \\sigma_{99999}\\right)$ of $\\{1,2, \\ldots, 99999\\}$ such that the value of the concatenation $\\overline{\\sigma_{1} \\sigma_{2} \\ldots \\sigma_{99999}}$ is maximized. Find the index $i$ such that $\\sigma_{i}=2025$.)",
+      "source_answer": "88607",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 17,
+      "source_problem_sha256": "f3e33107b7c06bf626e2149544eeebbd9ec5e18c749e129ed2ee5fa447db6d98",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.7,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-25",
+      "problem": "Let $\\alpha$ and $\\beta$ be two angles in $[0,2 \\pi)$, and let $A=(\\cos \\alpha, \\sin \\alpha), B=(\\cos \\beta, \\sin \\beta)$ and $C=$ $(\\cos \\alpha+\\cos \\beta, \\sin \\alpha+\\sin \\beta)$. If one of the points has coordinates $\\left(\\frac{32}{25}, \\frac{24}{25}\\right)$, compute the area of $A B C$.",
+      "source_answer": "\\frac{12}{25}",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 25,
+      "source_problem_sha256": "df847377210b2c18ea0e551ff1c1a35eb97ccb025ba2fe39f75a66bf574253a3",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-36",
+      "problem": "Compute the number of ordered pairs of positive integers $(x, y)$ with $x+y \\leq 20$ for which there exists a positive integer $n$ satisfying $n=\\operatorname{lcm}(n, x)-\\operatorname{gcd}(n, y)$.",
+      "source_answer": "36",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 36,
+      "source_problem_sha256": "6f11ab58abd00ca7d2eab2b00a1f631a175c1eedfcaef0cc5ccf27071809a5b4",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.46153846153846156,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-38",
+      "problem": "For positive integers $p$ and $q$, there are exactly $14$ ordered pairs of real numbers $(a, b)$ with $0<$ $a, b<1$ such that both $a p+3 b$ and $2 a+b q$ are positive integers. Compute the number of possible ordered pairs $(p, q)$.",
+      "source_answer": "7",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 38,
+      "source_problem_sha256": "ff013f67580c014170616de0c11b29d22aaddab60c764b33d7c85b23bb2640dc",
+      "topics": [
+        "Algebra",
+        "Number Theory"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6153846153846154,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-48",
+      "problem": "Given real numbers $s, m$, and $t$ such that $s^{2}+m^{2}+t^{2}=8, s^{3}+m^{3}+t^{3}=11$, and $s^{4}+m^{4}+t^{4}=25$, compute the value of $(s+m+t)(s+m-t)(s-m+t)(s-m-t)$.",
+      "source_answer": "-14",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 48,
+      "source_problem_sha256": "a7e7e2966b4269793459e30349fb4550a55e83e1eed5fe59b236b0d053be4f42",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.5,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-49",
+      "problem": "Compute the number of integers between $1$ and $2025$ inclusive that cannot be represented as $x(\\lceil x\\rceil+\\lfloor x\\rfloor)$ for any positive real number $x$.",
+      "source_answer": "1002",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 49,
+      "source_problem_sha256": "bd9e7bd1b2891330b42e44113211b1f852bb54d93eed18cbc261b384c3c74b37",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "02-advanced",
+      "ordering_proxy": 0.6,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-22",
+      "problem": "Digits $1$ through $9$ are placed on a $3 x 3$ square such that all rows and columns sum to the same value. Please note that diagonals do not need to sum to the same value. How many ways can this be done?",
+      "source_answer": "72",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 22,
+      "source_problem_sha256": "43a6e77e319d51f373aeb341f7753267d0461903dae6d20d40cbe12ce98ee13d",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.7333333333333333,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-24",
+      "problem": "Define the function $f$ on positive integers\n\n$$\nf(n)= \\begin{cases}\\frac{n}{2} & \\text { if } n \\text { is even } \\\\ n+1 & \\text { if } n \\text { is odd }\\end{cases}\n$$\n\nLet $S(n)$ equal the smallest positive integer $k$ such that $f^{k}(n)=1$. How many positive integers satisfy $S(n)=11$ ?",
+      "source_answer": "89",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 24,
+      "source_problem_sha256": "f85cdf30994b70bcba4a9fc6ae45697fb526ab6ca1f57fec9610aed08f57253d",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-26",
+      "problem": "A repetend is the infinitely repeated digit sequence of a repeating decimal. What are the last three digits of the repetend of the decimal representation of $\\frac{1}{727}$, given that the repetend has a length of $726$ ? Express the answer as a three-digit number. Include preceding zeros if there are any.",
+      "source_answer": "337",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 26,
+      "source_problem_sha256": "248d30a35d0e509e9cd2d7f7fd950193944f42f9697ff5138aa3684e29c790cf",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8666666666666667,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-27",
+      "problem": "Consider a $54$-deck of cards, i.e. a standard $52$-card deck together with two jokers. Ada draws cards from the deck until Ada has drawn an ace, a king, and a queen. How many cards does Ada pick up on average?",
+      "source_answer": "\\frac{737}{39}",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 27,
+      "source_problem_sha256": "055dcf22b844dcde7aceebcdfc0b2bd7731b7930a1642b4fc4ebdfae82a95556",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-brumo-2025-29",
+      "problem": "Let $f$ be a degree $7$ polynomial satisfying\n$$\nf(k)=\\frac{1}{k^{2}}\n$$\n\nfor $k \\in\\{1 \\cdot 2,2 \\cdot 3, \\ldots, 8 \\cdot 9\\}$. Find $f(90)-\\frac{1}{90^{2}}$.",
+      "source_answer": "-\\frac{2431}{50}",
+      "source_dataset": "MathArena/brumo_2025",
+      "source_index": 29,
+      "source_problem_sha256": "4ed4abd55c84ed2aec95089ff342187283beaabb05189e2a735f7e8c67695c64",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9666666666666667,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-08",
+      "problem": "Let $P(x)=x^{4}+20 x^{3}+29 x^{2}-666 x+2025$. It is known that $P(x)>0$ for every real $x$.\n\nThere is a root $r$ for $P$ in the first quadrant of the complex plane that can be expressed as $r=\\frac{1}{2}(a+b i+\\sqrt{c+d i})$, where $a, b, c, d$ are integers. Find $a+b+c+d$.",
+      "source_answer": "322",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 8,
+      "source_problem_sha256": "009dcd7834ad8ca57c78d53b8fefeb34ce7f9909e0cb6ddf477a0eb03fe76167",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-09",
+      "problem": "Find the largest prime factor of $45^{5}-1$.",
+      "source_answer": "2851",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 9,
+      "source_problem_sha256": "0cc50b40745cd480a612afb8f916c537e07fdfb98d39de2f72c110ac1bb0de6c",
+      "topics": [
+        "Number Theory"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-10",
+      "problem": "Let $a_{n}$ be a recursively defined sequence with $a_{0}=2024$ and $a_{n+1}=a_{n}^{3}+5 a_{n}^{2}+10 a_{n}+6$ for $n \\geq 0$. Determine the value of\n\n$$\n\\sum_{n=0}^{\\infty} \\frac{2^{n}\\left(a_{n}+1\\right)}{a_{n}^{2}+3 a_{n}+4}\n$$",
+      "source_answer": "\\frac{1}{2026}",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 10,
+      "source_problem_sha256": "3addbe442320603c0bd32104e2237e3c7d52d274c73f2e873451702b56221a84",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-18",
+      "problem": "Divide a regular 8960-gon into non-overlapping parallelograms. Suppose that $R$ of these parallelograms are rectangles. What is the minimum possible value of $R$ ?",
+      "source_answer": "2240",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 18,
+      "source_problem_sha256": "59aac682921fad3a4332e6fcefdf5a4be0c2fdff8991d970ee0b3e03d1c489ea",
+      "topics": [
+        "Combinatorics",
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-19",
+      "problem": "Let $p(k)$ be the probability that if we choose a uniformly random subset $S$ of $\\{1,2, \\ldots, 18\\}$, then $|S| \\equiv k$ $(\\bmod 5)$.\nEvaluate\n\n$$\n\\sum_{k=0}^{4}\\left|p(k)-\\frac{1}{5}\\right|\n$$",
+      "source_answer": "\\frac{9349}{327680}",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 19,
+      "source_problem_sha256": "3563e4a3d62a5ab7c2e726e5c49903d845527d9073f634a53e2a224d8ac48354",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-20",
+      "problem": "Let $a_{n}$ be the number of ways to express $n$ as an ordered sum of powers of $3$. For example, $a_{4}=3$, since\n\n$$\n4=1+1+1+1=1+3=3+1 .\n$$\n\nLet $b_{n}$ denote the remainder upon dividing $a_{n}$ by $3$. Evaluate\n\n$$\n\\sum_{n=1}^{3^{2025}} b_{n} .\n$$",
+      "source_answer": "4102652",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 20,
+      "source_problem_sha256": "5bd8d22428b59983b2794a707bf996c74580365163a4d86edc8fad11788b6641",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-29",
+      "problem": "Define the ratio of an ellipse to be the length of the major axis divided by the length of the minor axis.\n\nGiven a trapezoid $A B C D$ with $A B \\| D C$ and that $\\angle A D C$ is a right angle, with $A B=18, A D=$ $33, C D=130$, find the smallest ratio of any ellipse that goes through all vertices of $A B C D$.",
+      "source_answer": "\\frac{11}{3}",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 29,
+      "source_problem_sha256": "4e7a772050fe0c95e1677c731a58fa0e1717019c216f8cf33b37d4bbe78e4bcb",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-cmimc-2025-39",
+      "problem": "Given a triangle, $A B=78, B C=50, A C=112$, construct squares $A B X Y, B C P Q, A C M N$ outside the triangle. Let $L_{1}, L_{2}, L_{3}$ be the midpoints of $\\overline{M P}, \\overline{Q X}, \\overline{N Y}$, respectively. Find the area of $L_{1} L_{2} L_{3}$.",
+      "source_answer": "8222",
+      "source_dataset": "MathArena/cmimc_2025",
+      "source_index": 39,
+      "source_problem_sha256": "9450143e050bc8d0fdc84f040d1bccbc3181667ad604004e0404b8532443c1e0",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-08",
+      "problem": "Let $\\zeta=\\cos \\frac{2 \\pi}{13}+i \\sin \\frac{2 \\pi}{13}$. Suppose $a>b>c>d$ are positive integers satisfying\n$$\n\\left|\\zeta^{a}+\\zeta^{b}+\\zeta^{c}+\\zeta^{d}\\right|=\\sqrt{3}\n$$\n\nCompute the smallest possible value of $1000 a+100 b+10 c+d$.",
+      "source_answer": "7521",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 8,
+      "source_problem_sha256": "7f1eea7cda7430f32cb0f923f091a52d0361e3e0ced82ef3310b683f1eee321e",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-10",
+      "problem": "A polynomial $f \\in \\mathbb{Z}[x]$ is called splitty if and only if for every prime $p$, there exist polynomials $g_{p}, h_{p} \\in \\mathbb{Z}[x]$ with $\\operatorname{deg} g_{p}, \\operatorname{deg} h_{p}<\\operatorname{deg} f$ and all coefficients of $f-g_{p} h_{p}$ are divisible by $p$. Compute the sum of all positive integers $n \\leq 100$ such that the polynomial $x^{4}+16 x^{2}+n$ is splitty.",
+      "source_answer": "693",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 10,
+      "source_problem_sha256": "4d3025aeb88582e5ad9e2343f0f25f186d325d810690f37d74648352bf11c912",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2024-19",
+      "problem": "Compute the number of triples $(f, g, h)$ of permutations on $\\{1,2,3,4,5\\}$ such that\n$$\\begin{aligned}\n\n& f(g(h(x)))=h(g(f(x)))=g(x), \\\\\n& g(h(f(x)))=f(h(g(x)))=h(x), and \\\\\n& h(f(g(x)))=g(f(h(x)))=f(x)\n\n\\end{aligned}$$\nfor all $x \\in\\{1,2,3,4,5\\}$.",
+      "source_answer": "146",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 19,
+      "source_problem_sha256": "4406ececa90b4d3d2b15bd184fbe45c55e839522df282c944c05a945c4f83224",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": [
+        "Repaired HTML line breaks and escaped alignment markers."
+      ]
+    },
+    {
+      "id": "contest-hmmt-feb-2024-20",
+      "problem": "A peacock is a ten-digit positive integer that uses each digit exactly once. Compute the number of peacocks that are exactly twice another peacock.",
+      "source_answer": "184320",
+      "source_dataset": "MathArena/hmmt_feb_2024",
+      "source_index": 20,
+      "source_problem_sha256": "2942fc47bf8565dbf0520e7eddb573cf6b66b72bd2d9e2d89d152cfef981da73",
+      "topics": [
+        "Mixed"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-09",
+      "problem": "Let $f$ be the unique polynomial of degree at most $2026$ such that for all $n \\in\\{1,2,3, \\ldots, 2027\\}$,\n$$\nf(n)= \\begin{cases}1 & \\text { if } n \\text { is a perfect square } \\\\ 0 & \\text { otherwise }\\end{cases}\n$$\n\nSuppose that $\\frac{a}{b}$ is the coefficient of $x^{2025}$ in $f$, where $a$ and $b$ are integers such that $\\operatorname{gcd}(a, b)=1$. Compute the unique integer $r$ between $0$ and $2026$ (inclusive) such that $a-r b$ is divisible by $2027$. (Note that $2027$ is prime.)",
+      "source_answer": "1037",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 9,
+      "source_problem_sha256": "d6e306c4614a89d7111d426eb799ad031cddf1c0b80ce21cb909c7f810ee5a47",
+      "topics": [
+        "Algebra",
+        "Number Theory"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-18",
+      "problem": "Albert writes $2025$ numbers $a_{1}, \\ldots, a_{2025}$ in a circle on a blackboard. Initially, each of the numbers is uniformly and independently sampled at random from the interval $[0,1]$. Then, each second, he \\emph{simultaneously} replaces $a_{i}$ with $\\max \\left(a_{i-1}, a_{i}, a_{i+1}\\right)$ for all $i=1,2, \\ldots, 2025$ (where $a_{0}=a_{2025}$ and $a_{2026}=a_{1}$ ). Compute the expected value of the number of distinct values remaining after $100$ seconds.",
+      "source_answer": "\\frac{2025}{101}",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 18,
+      "source_problem_sha256": "7d2bf8a412c891a5bc37646321515d86fb52f69903e680b62e7f701f52b184fe",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-19",
+      "problem": "Two points are selected independently and uniformly at random inside a regular hexagon. Compute the probability that a line passing through both of the points intersects a pair of opposite edges of the hexagon.",
+      "source_answer": "\\frac{4}{9}",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 19,
+      "source_problem_sha256": "3fb4bb93ada6effb1982ee390927b4a064603d63ae3fee1704355fb8926d96c7",
+      "topics": [
+        "Combinatorics",
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-hmmt-feb-2025-20",
+      "problem": "The circumference of a circle is divided into $45$ arcs, each of length $1$. Initially, there are $15$ snakes, each of length $1$, occupying every third arc. Every second, each snake independently moves either one arc left or one arc right, each with probability $\\frac{1}{2}$. If two snakes ever touch, they merge to form a single snake occupying the arcs of both of the previous snakes, and the merged snake moves as one snake. Compute the expected number of seconds until there is only one snake left.",
+      "source_answer": "\\frac{448}{3}",
+      "source_dataset": "MathArena/hmmt_feb_2025",
+      "source_index": 20,
+      "source_problem_sha256": "caaa8d40dff4a94a699189b71926eb5930da8d7e834ee43fd3e14f94de417bab",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-18",
+      "problem": "For any permutation $\\sigma=\\left(a_{1}, a_{2}, \\ldots, a_{8}\\right)$ of the set $\\{1,2, \\ldots, 8\\}$ and some index $1 \\leq k \\leq 8$, define\n\n$$\nL_{k}(\\sigma)=\\operatorname{lcm}\\left(a_{1}, a_{2}, \\ldots, a_{k}\\right)\n$$\nwhere $\\operatorname{lcm}\\left(a_{1}, a_{2}, \\ldots, a_{k}\\right)$ denotes the least common multiple of $a_{1}, a_{2}, \\ldots, a_{k}$. An index $2 \\leq k \\leq 8$ is called increasing if $L_{k}(\\sigma)>L_{k-1}(\\sigma)$. Let $T(\\sigma)$ be the total number of increasing indices of $\\sigma$. Compute the expected value of $T(\\sigma)$ when $\\sigma$ is chosen uniformly at random among all permutations of $\\{1,2, \\ldots, 8\\}$.",
+      "source_answer": "\\frac{157}{40}",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 18,
+      "source_problem_sha256": "ef91708fd844e176c5147fe60cc11b90a097441df53c2a8ec4fb7d6825db3cd0",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.8,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-19",
+      "problem": "Let $\\alpha$ be the permutation of $\\{0,1, \\ldots, 12\\}$ satisfying $\\alpha(0)=0, \\alpha(n)=n+1$ for odd $n$, and $\\alpha(n)=n-1$ for positive even $n$. Let $f(n)$ be the unique polynomial of minimal degree with coefficients in $\\{0,1, \\ldots, 12\\}$ such that $13 \\mid f(n)-\\alpha(n)$ for all $n \\in\\{0,1, \\ldots, 12\\}$. If $f(n)$ has degree $d$ and can be expressed as $f(n)=\\sum_{i=0}^{d} a_{i} n^{i}$, find $100 a_{d}+a_{1}$.",
+      "source_answer": "608",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 19,
+      "source_problem_sha256": "c31d82b0de847fa2c1cf117d9aa95cd4775227ab4461bc93ef8f7f70639f7ab3",
+      "topics": [
+        "Combinatorics",
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-20",
+      "problem": "Let $s_{0}$ be a square. One diagonal of $s_{0}$ is chosen, and a square $s_{1}$ is drawn with this diagonal as one of its sides. There are four possible such squares $s_{1}$; one is chosen out of these four uniformly at random. Choose $s_{2}$ in the same manner (so that it has a side which is a diagonal of $s_{1}$ ), and continue similarly with $s_{3}, s_{4}, \\ldots$. Let $p\\left(s_{n}\\right)$ be the probability that square $s_{n}$ shares an interior with $s_{0}$ (in other words, the area of their intersection is positive). Compute the value that $p\\left(s_{n}\\right)$ approaches as $n$ approaches infinity.",
+      "source_answer": "\\frac{5}{12}",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 20,
+      "source_problem_sha256": "149743191ae4392cfd60ba15b866bbd07b9893b67cc37e31a9d972a3c19343e5",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-29",
+      "problem": "Let $A B C D$ be a square centered at $E$ with side length $10$. Point $P$ lies on the extension of line $C D$ past point $D$. There exists a point $Q$ on line $A P$ such that lines $E Q, B P$, and $A D$ are concurrent. If $E Q=7 \\sqrt{2}$, compute $|A Q-D Q|$.",
+      "source_answer": "2",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 29,
+      "source_problem_sha256": "322ee8b2141c1d262202501c1bebb132f352b48e3d58656ae5d950cfa7608916",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-40",
+      "problem": "For each positive integer $n$, define the coloring $C_{n}$ as a coloring of all lattice points (i.e. points with integer coordinates) on the plane such that any two points $A=\\left(A_{x}, A_{y}\\right), B=\\left(B_{x}, B_{y}\\right)$ have the same color if and only if $A_{x}+A_{y}$ and $B_{x}+B_{y}$ have the same remainder when divided by $n$. A positive integer $n$ is called broken if in the coloring $C_{n}$ there exist two points of different color and Euclidean distance a positive integer divisible by $n$. Find the sum of all broken positive integers less than or equal to $50$.",
+      "source_answer": "511",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 40,
+      "source_problem_sha256": "a77deceb0dc85d889c4c7e582bbc0470e62faa556b2b0ec1aea81dae3bfc28e6",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.7692307692307693,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-42",
+      "problem": "Let $S$ be the set of all strings of length $15$ formed from five $1$s, $2$s, and $3$s. Say a string in $S$ is threnodic if:\n\n\\begin{itemize}\n\\item No two adjacent characters are the same, and\n\\item Through a sequence of removals of contiguous substrings $123,231$, and $312$, the string can be deleted (note that the intermediate strings can have adjacent equal characters).\n\\end{itemize}\n\nCompute the number of threnodic strings in $S$.",
+      "source_answer": "213",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 42,
+      "source_problem_sha256": "a1d6ca66bf212eba7ebcc11bbbe7add1e87b380fe8024c769cd500e816206950",
+      "topics": [
+        "Combinatorics"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 0.9230769230769231,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-43",
+      "problem": "Let $\\triangle A B C$ be an acute triangle with circumcircle $\\omega_{1}$, and let $D$ be a point on segment $B C$. Circle $\\omega_{2}$ is tangent to segment $A D$, segment $B D$, and $\\omega_{1}$. Circle $\\omega_{3}$ is tangent to segment $A D$, segment $C D$, and $\\omega_{1}$, and both circles are on the same side of $B C$ as $A$. If circles $\\omega_{2}$ and $\\omega_{3}$ have radii $5$ and $7$, respectively, with centers $13$ units apart, compute the sum of all possible lengths of the inradius of $\\triangle A B C$.",
+      "source_answer": "\\frac{1980}{169}",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 43,
+      "source_problem_sha256": "f56c398b3ca09193d93d6b47869664363140b4ac87daf7250d2df38bf6b5dc58",
+      "topics": [
+        "Geometry"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    },
+    {
+      "id": "contest-smt-2025-53",
+      "problem": "Let $f(x)=4 x+a, g(x)=6 x+b$, and $h(x)=9 x+c$. Let $S(a, b, c)$ be the set of the $3^{20}$ functions formed by all possible compositions of $f, g, h$ a total of $20$ times, and let $R(a, b, c)$ be the number of distinct roots over all functions in $S(a, b, c)$. Compute the second smallest possible value of $R(a, b, c)$ as $a, b, c$ range over all reals.",
+      "source_answer": "41",
+      "source_dataset": "MathArena/smt_2025",
+      "source_index": 53,
+      "source_problem_sha256": "9f05191bdd37f0394af1da5dacd8ba13620814ce94480795348f4c01f03fafdc",
+      "topics": [
+        "Algebra"
+      ],
+      "rung": "03-stretch",
+      "ordering_proxy": 1.0,
+      "changes": []
+    }
+  ]
+}

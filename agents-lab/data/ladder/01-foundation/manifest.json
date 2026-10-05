@@ -1,0 +1,86 @@
+{
+  "dataset": "HuggingFaceH4/MATH-500",
+  "source_url": "https://huggingface.co/datasets/HuggingFaceH4/MATH-500",
+  "source_revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+  "source_file": "test.jsonl",
+  "source_file_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+  "prepared_at": "2026-10-05T13:50:07.125403+00:00",
+  "selection_notes": "Ten reviewed scalar rational answers across subjects and levels 1\u20135. Statements preserved verbatim; no diagrams required. References normalized by Fraction. Public development data, not held-out evaluation. Retained as the foundation rung after both lab baselines scored 10/10 with gpt-5-nano-2025-08-07.",
+  "selected_questions": [
+    {
+      "id": "dev-001",
+      "source_id": "test/algebra/2584.json",
+      "subject": "Algebra",
+      "level": 3,
+      "review": "Rational substitution; independently checked 2 + 5/3 + 1."
+    },
+    {
+      "id": "dev-002",
+      "source_id": "test/number_theory/572.json",
+      "subject": "Number Theory",
+      "level": 3,
+      "review": "Divisor count: 196 = 2^2 * 7^2."
+    },
+    {
+      "id": "dev-003",
+      "source_id": "test/intermediate_algebra/1197.json",
+      "subject": "Intermediate Algebra",
+      "level": 5,
+      "review": "Degree-five interpolation; exact rational check."
+    },
+    {
+      "id": "dev-004",
+      "source_id": "test/number_theory/737.json",
+      "subject": "Number Theory",
+      "level": 5,
+      "review": "Proper-divisor sums: 284 -> 220 -> 284."
+    },
+    {
+      "id": "dev-005",
+      "source_id": "test/intermediate_algebra/134.json",
+      "subject": "Intermediate Algebra",
+      "level": 1,
+      "review": "Fifty pairs, each summing to -1."
+    },
+    {
+      "id": "dev-006",
+      "source_id": "test/counting_and_probability/525.json",
+      "subject": "Counting & Probability",
+      "level": 5,
+      "review": "Circular gaps: 3! * C(4,3) * 3!."
+    },
+    {
+      "id": "dev-007",
+      "source_id": "test/algebra/1072.json",
+      "subject": "Algebra",
+      "level": 4,
+      "review": "Eighth geometric term: (125/9) * (3/5)^7."
+    },
+    {
+      "id": "dev-008",
+      "source_id": "test/counting_and_probability/119.json",
+      "subject": "Counting & Probability",
+      "level": 4,
+      "review": "Constant term: C(5,2) * 10^2 * (-1/2)^3."
+    },
+    {
+      "id": "dev-009",
+      "source_id": "test/geometry/967.json",
+      "subject": "Geometry",
+      "level": 3,
+      "review": "Pentagon rotation: 360/5. Statement needs no diagram."
+    },
+    {
+      "id": "dev-010",
+      "source_id": "test/precalculus/285.json",
+      "subject": "Precalculus",
+      "level": 2,
+      "review": "Roots include primitive sixth roots of unity."
+    }
+  ],
+  "tier": "01-foundation",
+  "sha256": {
+    "questions.jsonl": "9b296aa5c474b045303460955cde150b22cd2f87e5939ea3c3781d38a78da04b",
+    "answers.jsonl": "2a8a22f7d9c8703728835af4c53a37c4ff6acd9484b67a4c551f4a5949038b99"
+  }
+}

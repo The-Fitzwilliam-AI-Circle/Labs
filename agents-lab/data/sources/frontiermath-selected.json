@@ -1,0 +1,53 @@
+{
+  "source_url": "https://epoch.ai/frontiermath/tiers-1-4/benchmark-problems",
+  "credit": "Epoch AI, FrontierMath Sample Problems (2026)",
+  "retrieved_on": "2026-10-05",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source_html_sha256": "bb854468715780e971e8167c5e4858ffcdd1a26a24b0f60ef68a3e160e4c9403",
+  "extraction": "Seven integer-answer examples; HTML converted to text while retaining source LaTeX. The questions are public samples, not private FrontierMath evaluation data.",
+  "problems": [
+    {
+      "title": "Find the degree 19 polynomial",
+      "source_tier": 2,
+      "problem": "Construct a degree 19 polynomial \\(p(x) \\in \\mathbb{C}[x]\\) such that \\(X:=\\{p(x) = p(y)\\} \\subset \\mathbb{P}^1 \\times \\mathbb{P}^1\\) has at least 3 (but not all linear) irreducible components over \\(\\mathbb{C}\\). Choose \\(p(x)\\) to be odd, monic, have real coefficients and linear coefficient -19 and calculate \\(p(19)\\).",
+      "answer": "1876572071974094803391179"
+    },
+    {
+      "title": "Orbit counting of matrix tuples",
+      "source_tier": 1,
+      "problem": "Let \\(M_{1000}^4\\) be the set of \\(4\\)-tuples of invertible \\(1000\\times1000\\) matrices with coefficients in \\(\\mathbb{C}\\). Let \\(S\\subset M_{1000}^4\\) be the subset of all tuples \\((A_1,A_2,A_3,A_4)\\) satisfying the conditions:\n\\[\n\\begin{align}\nA_i^2 &= I, &&\\quad \\text{for all } 1\\le i\\le 4\\\\\nA_iA_j &= A_jA_i, &&\\quad \\text{if } \\{3j- i, 3i-j\\} \\cap 5\\mathbb{Z}_{>0} =\\emptyset \\\\\nA_iA_jA_i^{-1}A_j^{-1} &= A_jA_i, &&\\quad \\text{if } \\{3j- i, 3i-j\\} \\cap 5\\mathbb{Z}_{>0} \\neq\\emptyset,\n\\end{align}\n\\]\nwhere $$5\\mathbb{Z}_{>0}$$ refers to the set of positive multiples of $$5$$, i.e., $$5\\mathbb{Z}_{>0} = \\{5,10,15,\\dots\\}$$.\nThe group \\(G = GL(1000)\\) of invertible complex \\(1000\\times 1000\\) matrices acts on \\(S\\) by the formula:\n[B\\cdot (A_1,A_2,A_3,A_4) = (BA_1B^{-1}, BA_2B^{-1}, BA_3B^{-1}, BA_4B^{-1}).]\nFind the number of orbits of this action, i.e., find \\(|S/G|\\).",
+      "answer": "625243878951"
+    },
+    {
+      "title": "Counting nonzero solutions of homogeneous equations",
+      "source_tier": 1,
+      "problem": "How many nonzero points are there on\n[x^3y+y^3z+z^3x=0]\nover \\(\\mathbb{F}_{5^{18}}\\) up to scaling?",
+      "answer": "3814708984376"
+    },
+    {
+      "title": "A recursive construction on large permutations",
+      "source_tier": 2,
+      "problem": "Let \\(W\\) be the set of finite words with all distinct letters over the alphabet of positive integers. Define a function \\(F:W\\rightarrow W\\) recursively as follows. First, let \\(F(\\epsilon)=\\epsilon\\), where \\(\\epsilon\\) is the empty word. Given a nonempty word \\(w\\in W\\), let \\(F(w)=F(L)F(R)m\\), where \\(m\\) is the largest number in \\(w\\) and \\(w=LmR\\). Let \\(n=10^{12}\\), and note that \\(F\\) restricts to a function from \\(S_n\\) to itself, where \\(S_n\\) is the symmetric group of order \\(n\\). Let \\(\\sigma\\) be a permutation chosen uniformly at random from \\(S_n\\), and let \\(X\\) be the expected number of integers \\(1\\le i \\lt n\\) such that \\((F(\\sigma))^{-1}(i+1) \\lt (F(\\sigma))^{-1}(i)\\). Compute \\(\\lfloor X\\rfloor\\).",
+      "answer": "499999999972"
+    },
+    {
+      "title": "Expected perimeter enclosing the center of a 101-gon",
+      "source_tier": 1,
+      "problem": "Let \\(\\mathcal P\\) be a regular \\(101\\)-gon of circumradius \\(1\\). Draw each diagonal of \\(\\mathcal P\\) with probability 0.001. This splits \\(\\mathcal P\\) into several closed regions. Let \\(E\\) be the expected value of the perimeter of the region containing the center of \\(\\mathcal P\\).\nCompute \\(\\lfloor 10^9 E \\rfloor.\\)",
+      "answer": "4771880153"
+    },
+    {
+      "title": "Asymptotics of solutions of a 5-variable equation",
+      "source_tier": 2,
+      "problem": "There are unique constants \\(C, \\alpha, \\beta\\) such that the number of solutions to the equation\n\\(ab+1=cde\\)\nwith \\(a, b, c, d, e \\in \\mathbb{N}\\) with \\(ab \\le x\\) is asymptotic to \\(Cx^{\\alpha}\\log^{\\beta}x\\) as \\(x\\rightarrow\\infty.\\)\nCompute \\(\\lfloor 1000C\\rfloor.\\)",
+      "answer": "214"
+    },
+    {
+      "title": "Combinatorics in the Tsirelson space",
+      "source_tier": 3,
+      "problem": "Background. The Tsirelson space is a Banach space introduced in 1974 as a counterexample to a longstanding conjecture in Banach space theory. It is a subspace of \\(\\ell^\\infty\\) described as follows.\nLet \\(P_k\\) denote the operator on \\(\\ell^\\infty\\) that modifies each \\(\\langle x_n:\\, n \\in \\mathbb N \\rangle \\in \\ell^\\infty\\) by setting the first \\(k\\) coordinates equal to \\(0\\) (without changing any other coordinates). Given \\(\\vec x = \\langle x_n:\\, n \\in \\mathbb N \\rangle \\in \\ell^\\infty\\), the support of \\(\\vec x\\) is \\(\\mathrm{supp}(\\vec x) = \\{ n \\in \\mathbb N :\\, x_n \\neq 0 \\}\\).\nThe Tsirelson space is the span of the smallest pointwise-closed subset \\(K\\) of the unit ball in \\(\\ell^\\infty\\) satisfying the following two properties:\n  For every $$j \\in \\mathbb N$$, the unit vector $$\\vec e_j$$ and all its multiples $$\\lambda \\vec e_j$$ with $$|\\lambda| \\leq 1$$ belong to $$K$$.\n  Suppose $$\\vec x_1,\\dots,\\vec x_k$$ is a finite sequence of members of $$K$$, each with finite support, such that $$\\max (\\mathrm{supp}(\\vec x_i)) < \\min (\\mathrm{supp}(\\vec x_j))$$ for all $$i < j \\leq k$$. Then $$\\frac{1}{2}P_k(\\vec x_1 + \\dots + \\vec x_k) \\in K$$.\nProblem.\n Let $$N$$ denote the largest natural number such that\nthere is a member $$\\langle x_n:\\, n \\in \\mathbb N \\rangle$$ of the set $$K$$ described above with\n$$x_3 = 1/2$$, $$x_N > 1/20$$, and\n$$x_i > x_j$$ whenever $$3 \\leq i < j \\leq N$$.\nIt turns out that $$N$$ is too large to write down in a reasonable amount of space, so let us ask instead: what is the largest power of $$2$$ dividing $$N$$? In other words, find the integer $$p \\geq 0$$ such that $$N = m2^p$$ for some odd number $$m$$.",
+      "answer": "402653211"
+    }
+  ]
+}

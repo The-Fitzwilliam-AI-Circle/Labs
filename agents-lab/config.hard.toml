@@ -1,0 +1,8 @@
+# Optional generous-budget diagnostic for the hard set; config.toml is unchanged.
+max_model_requests = 8
+max_output_tokens_per_request = 16384
+max_python_calls = 8
+episode_timeout_seconds = 240
+python_timeout_seconds = 5
+python_output_limit_bytes = 8192
+python_image = "mathlab-python:v0"

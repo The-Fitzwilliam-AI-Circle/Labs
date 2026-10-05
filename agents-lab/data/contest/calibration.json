@@ -1,0 +1,392 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-05T15:41:20.943055+00:00",
+  "questions_sha256": "dfcdf412f93d213b4c0e2a0ee0dcb04e06b8a7fcfbe8ffee125bb5639813685d",
+  "answers_sha256": "b24b7f0c1ae09fea4accfe8c53ad288ab2129845efdb608f1bee83a3aa83c4f3",
+  "pilot_sha256": "e07d4c8f24c36a352de61b10fdf8a330bfbf9013529d4fe4f364b3142fc83560",
+  "method": "One attempt per baseline on the same twelve development questions, four per provisional rung, chosen and frozen before running. All selected cases retained. This is a small stratified diagnostic, not a measured score on all 100 development questions, a confidence claim about final validation, or a clean tool-only ablation: the direct baseline uses one request and the tool baseline may use multiple. No final-validation model runs were used for calibration. Profiles ran concurrently; elapsed times are operational observations, not a latency benchmark.",
+  "profiles": [
+    {
+      "label": "direct",
+      "model": "gpt-5-nano-2025-08-07",
+      "agent_sha256": "e740e8b0560451fa6426741ae6b2a08b1f2cc64b1a2657436a6defc29a0cd9bf",
+      "limits": {
+        "max_model_requests": 8,
+        "max_output_tokens_per_request": 16384,
+        "max_python_calls": 8,
+        "episode_timeout_seconds": 240,
+        "python_timeout_seconds": 5,
+        "python_output_limit_bytes": 8192,
+        "python_image": "mathlab-python:v0"
+      },
+      "docker_image_id": "sha256:d9d7cf6ad46d32989eb61359ee1393f074ef332d5542039fe6fda84f68389489",
+      "runs": [
+        {
+          "directory": "runs/contest-direct-pilot",
+          "started_at": "2026-10-05T15:27:41.273690+00:00",
+          "ended_at": "2026-10-05T15:40:55.520739+00:00",
+          "results_sha256": "e4301733e5f9d582fa9b2f6b0cdbe34a7ef0c8fedc8ec7ca43f11bd1b8c27ab1",
+          "scores_sha256": "bfa0dd6b17819ed1ccd89a5fc655da05cf111ca746a00e4c5f7988709b9a2ef6",
+          "scheduled_task_ids": [
+            "contest-brumo-2025-10",
+            "contest-cmimc-2025-33",
+            "contest-hmmt-feb-2025-04",
+            "contest-hmmt-feb-2025-13",
+            "contest-hmmt-feb-2025-15",
+            "contest-smt-2025-05",
+            "contest-smt-2025-25",
+            "contest-smt-2025-49",
+            "contest-brumo-2025-26",
+            "contest-brumo-2025-27",
+            "contest-hmmt-feb-2025-09",
+            "contest-smt-2025-19"
+          ],
+          "provider_reasoning_configurations": [
+            {
+              "effort": "medium",
+              "context": "current_turn",
+              "mode": "standard"
+            }
+          ]
+        }
+      ],
+      "correct": 9,
+      "total": 12,
+      "categories": {
+        "correct": 9,
+        "token_limit": 2,
+        "wrong_answer": 1
+      },
+      "input_tokens": 4029,
+      "output_tokens": 115320,
+      "unknown_usage_requests": 0,
+      "outcomes": [
+        {
+          "id": "contest-brumo-2025-10",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "100",
+          "elapsed_seconds": 51.062814,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-brumo-2025-26",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "337",
+          "elapsed_seconds": 20.177719,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-brumo-2025-27",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 115.323517,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-cmimc-2025-33",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "512",
+          "elapsed_seconds": 95.316455,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-hmmt-feb-2025-04",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "-984",
+          "elapsed_seconds": 40.506688,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-hmmt-feb-2025-09",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "1037",
+          "elapsed_seconds": 56.662433,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-hmmt-feb-2025-13",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 107.171874,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-hmmt-feb-2025-15",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "120",
+          "elapsed_seconds": 99.735943,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-smt-2025-05",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "2025/2",
+          "elapsed_seconds": 13.481558,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-smt-2025-19",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "608",
+          "elapsed_seconds": 110.307915,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-smt-2025-25",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "12/25",
+          "elapsed_seconds": 12.049335,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-smt-2025-49",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "1002",
+          "elapsed_seconds": 72.446052,
+          "model_requests": 1,
+          "python_calls": 0
+        }
+      ],
+      "rungs": {
+        "01-contest": {
+          "correct": 3,
+          "total": 4
+        },
+        "02-advanced": {
+          "correct": 3,
+          "total": 4
+        },
+        "03-stretch": {
+          "correct": 3,
+          "total": 4
+        }
+      }
+    },
+    {
+      "label": "tool",
+      "model": "gpt-5-nano-2025-08-07",
+      "agent_sha256": "1d19c8f9be01732818d7cdf06acf89bebfe4dfa0f18e405ac3e256a1898bb905",
+      "limits": {
+        "max_model_requests": 8,
+        "max_output_tokens_per_request": 16384,
+        "max_python_calls": 8,
+        "episode_timeout_seconds": 240,
+        "python_timeout_seconds": 5,
+        "python_output_limit_bytes": 8192,
+        "python_image": "mathlab-python:v0"
+      },
+      "docker_image_id": "sha256:d9d7cf6ad46d32989eb61359ee1393f074ef332d5542039fe6fda84f68389489",
+      "runs": [
+        {
+          "directory": "runs/contest-tool-pilot",
+          "started_at": "2026-10-05T15:27:41.273663+00:00",
+          "ended_at": "2026-10-05T15:34:44.409473+00:00",
+          "results_sha256": "571feed4ca759c865421980e0e06661299618587ecdd445cdb866237a4062e8e",
+          "scores_sha256": "ee214154c2ff43b232f695babe1f9e6b70f880fe88d62490e049b0e88d45405c",
+          "scheduled_task_ids": [
+            "contest-brumo-2025-10",
+            "contest-cmimc-2025-33",
+            "contest-hmmt-feb-2025-04",
+            "contest-hmmt-feb-2025-13",
+            "contest-hmmt-feb-2025-15",
+            "contest-smt-2025-05",
+            "contest-smt-2025-25",
+            "contest-smt-2025-49",
+            "contest-brumo-2025-26",
+            "contest-brumo-2025-27",
+            "contest-hmmt-feb-2025-09",
+            "contest-smt-2025-19"
+          ],
+          "provider_reasoning_configurations": [
+            {
+              "effort": "medium",
+              "context": "current_turn",
+              "mode": "standard"
+            }
+          ]
+        }
+      ],
+      "correct": 8,
+      "total": 12,
+      "categories": {
+        "correct": 8,
+        "token_limit": 1,
+        "wrong_answer": 3
+      },
+      "input_tokens": 79926,
+      "output_tokens": 63143,
+      "unknown_usage_requests": 0,
+      "outcomes": [
+        {
+          "id": "contest-brumo-2025-10",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "222",
+          "elapsed_seconds": 68.779612,
+          "model_requests": 3,
+          "python_calls": 2
+        },
+        {
+          "id": "contest-brumo-2025-26",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "370",
+          "elapsed_seconds": 15.887689,
+          "model_requests": 3,
+          "python_calls": 2
+        },
+        {
+          "id": "contest-brumo-2025-27",
+          "correct": false,
+          "category": "wrong_answer",
+          "status": "completed",
+          "answer": "660/13",
+          "elapsed_seconds": 20.874372,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "contest-cmimc-2025-33",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "512",
+          "elapsed_seconds": 65.005638,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "contest-hmmt-feb-2025-04",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "-984",
+          "elapsed_seconds": 5.74892,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "contest-hmmt-feb-2025-09",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "1037",
+          "elapsed_seconds": 27.443709,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "contest-hmmt-feb-2025-13",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "105",
+          "elapsed_seconds": 30.001836,
+          "model_requests": 3,
+          "python_calls": 2
+        },
+        {
+          "id": "contest-hmmt-feb-2025-15",
+          "correct": false,
+          "category": "token_limit",
+          "status": "protocol_error",
+          "answer": null,
+          "elapsed_seconds": 102.751575,
+          "model_requests": 1,
+          "python_calls": 0
+        },
+        {
+          "id": "contest-smt-2025-05",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "2025/2",
+          "elapsed_seconds": 17.328648,
+          "model_requests": 2,
+          "python_calls": 1
+        },
+        {
+          "id": "contest-smt-2025-19",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "608",
+          "elapsed_seconds": 30.594432,
+          "model_requests": 4,
+          "python_calls": 3
+        },
+        {
+          "id": "contest-smt-2025-25",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "12/25",
+          "elapsed_seconds": 17.513164,
+          "model_requests": 3,
+          "python_calls": 2
+        },
+        {
+          "id": "contest-smt-2025-49",
+          "correct": true,
+          "category": "correct",
+          "status": "completed",
+          "answer": "1002",
+          "elapsed_seconds": 21.198009,
+          "model_requests": 3,
+          "python_calls": 2
+        }
+      ],
+      "rungs": {
+        "01-contest": {
+          "correct": 3,
+          "total": 4
+        },
+        "02-advanced": {
+          "correct": 3,
+          "total": 4
+        },
+        "03-stretch": {
+          "correct": 2,
+          "total": 4
+        }
+      }
+    }
+  ]
+}
